@@ -88,7 +88,9 @@ def manhattonPlot(p_ID, pvalues, ouFprefix):
 
 def any_effect(ouF):
     S = []
+    ALL = []
     ouFile = open(ouF, 'w')
+    ouFile2 = open(ouF.split('-Sig')[0] + '-ALL', 'w')
     gs = G[0]
     for gene in gs:
         phenotype_names = [gene + ':RNA', gene + ':ProteinLight']
@@ -115,25 +117,32 @@ def any_effect(ouF):
         pvalues = pd.DataFrame(data=pvalues.T,index=data_subsample.geno_ID,columns=[gene])
         flag = 0
         for n in range(pvalues.shape[0]):
+            k = position.ix[n]['chrom']+':'+str(position.ix[n]['pos'])
+            ALL.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene])
             if pvalues.ix[n][0] < SIG:
                 flag = 1
-                k = position.ix[n]['chrom']+':'+str(position.ix[n]['pos'])
                 #ouFile.write('\t'.join([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene]) + '\n')
                 S.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene])
-        if flag:
-            manhattonPlot(gene, pvalues,ouF)
+        ####if flag:
+        ####    manhattonPlot(gene, pvalues,ouF)
     S.sort(cmp = lambda x,y:cmp(float(x[3]),float(y[3])))
     for item in S:
         ouFile.write('\t'.join(item) + '\n')
         
     ouFile.close()
 
-any_effect('Yeast-RNA-ProteinLight-AnyEffect-Sig')
+    ALL.sort(cmp = lambda x,y:cmp(float(x[3]),float(y[3])))
+    for item in ALL:
+        ouFile2.write('\t'.join(item) + '\n')
+    ouFile2.close()
+
 
 
 def common_effect(ouF):
     S = []
+    ALL = []
     ouFile = open(ouF, 'w')
+    ouFile2 = open(ouF.split('-Sig')[0] + '-ALL', 'w')
     gs = G[0]
     for gene in gs:
         phenotype_names = [gene + ':RNA', gene + ':ProteinLight']
@@ -161,22 +170,26 @@ def common_effect(ouF):
         pvalues = pd.DataFrame(data=pvalues.T,index=data_subsample.geno_ID,columns=[gene])
         flag = 0
         for n in range(pvalues.shape[0]):
+            k = position.ix[n]['chrom']+':'+str(position.ix[n]['pos'])
+            ALL.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene])
             if pvalues.ix[n][0] < SIG:
                 flag = 1
                 #print(pvalues)
-                
-                k = position.ix[n]['chrom']+':'+str(position.ix[n]['pos'])
-
                 #ouFile.write('\t'.join([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene]) + '\n')
                 S.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene])
-        if flag:
-            manhattonPlot(gene, pvalues,ouF)
+        ####if flag:
+        ####    manhattonPlot(gene, pvalues,ouF)
     S.sort(cmp = lambda x,y:cmp(float(x[3]),float(y[3])))
     for item in S:
         ouFile.write('\t'.join(item) + '\n')
-    ouFile.close()
+
+    ALL.sort(cmp = lambda x,y:cmp(float(x[3]),float(y[3])))
+    for item in ALL:
+        ouFile2.write('\t'.join(item) + '\n')
+    ouFile2.close()
     
+    ouFile.close()
 common_effect('Yeast-RNA-ProteinLight-CommonEffect-Sig')
 
-
+any_effect('Yeast-RNA-ProteinLight-AnyEffect-Sig')
 
