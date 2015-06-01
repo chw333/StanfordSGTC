@@ -1,0 +1,10 @@
+load('geno_mrk.rda')
+load('trait1.rda')
+load('trait2.rda')
+write.table(t(geno), file='Yeast-Genotype', col.names=NA, row.names=T, sep='\t', quote=F)
+write.table(t(rna), file='Yeast-RNA', col.names=NA, row.names=T, sep='\t', quote=F)
+write.table(t(protLight), file='Yeast-ProteinLight', col.names=NA, row.names=T, sep='\t', quote=F)
+write.table(t(protHeavy), file='Yeast-ProteinHeavy', col.names=NA, row.names=T, sep='\t', quote=F)
+
+m = as.data.frame(mrk)
+write.table(m, file='Yeast-Mark-Pos', col.names=NA, row.names=T, sep='\t', quote=F)
