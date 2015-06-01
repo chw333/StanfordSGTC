@@ -20,9 +20,10 @@ else:
     print(set(rna) - set(pH))
 
 
-def combine(inF0, inF1, inF2, inF3, ouF):
+def combine(inF0, inF1, inF2, inF3, ouF, ouF2):
     D = {}
     H = []
+    G = []
     Strains = []
     inFile = open(inF0)
     for line in inFile:
@@ -35,6 +36,8 @@ def combine(inF0, inF1, inF2, inF3, ouF):
     head = inFile.readline().strip().split('\t')
     for h in head:
         H.append(h + ':' + 'RNA')
+        if h not in G:
+            G.append(h)
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')
@@ -46,6 +49,8 @@ def combine(inF0, inF1, inF2, inF3, ouF):
     head = inFile.readline().strip().split('\t')
     for h in head:
         H.append(h + ':' + 'ProteinLight')
+        if h not in G:
+            G.append(h)
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')
@@ -57,6 +62,8 @@ def combine(inF0, inF1, inF2, inF3, ouF):
     head = inFile.readline().strip().split('\t')
     for h in head:
         H.append(h + ':' + 'ProteinHeavy')
+        if h not in G:
+            G.append(h)
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')
@@ -72,10 +79,15 @@ def combine(inF0, inF1, inF2, inF3, ouF):
         else:
             print('###error###')
     ouFile.close()
+    ouFile = open(ouF2, 'w')
+    for g in G:
+        ouFile.write(g + '\n')
+    ouFile.close()
 
 
 
-combine('Yeast-Strains', 'Yeast-RNA', 'Yeast-ProteinLight','Yeast-ProteinHeavy', 'Yeast-Phenotype')
+
+combine('Yeast-Strains', 'Yeast-RNA', 'Yeast-ProteinLight','Yeast-ProteinHeavy', 'Yeast-Phenotype', 'Yeast-Phenotype-Genes')
 
 
 

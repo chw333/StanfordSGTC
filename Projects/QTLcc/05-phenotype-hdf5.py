@@ -1,7 +1,7 @@
 import pandas
 import scipy as sp
 import h5py
-C = pandas.io.parsers.read_csv('Yeast-Phenotype',header=0,index_col=0,sep='\t')
+C = pandas.io.parsers.read_csv('Yeast-Phenotype-Formated',header=0,index_col=0,sep='\t')
 matrix = sp.array(C.values,dtype='float')
 sample_IDs = sp.array(C.index,dtype='str')
 pheno_IDs  = sp.array(C.columns.values,dtype='str')
