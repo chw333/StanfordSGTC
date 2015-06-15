@@ -1,0 +1,1 @@
+/mnt/larsix/projects/NMD/hansun/MySoft/Seqnature/Seqnature/adjust_annotations.py

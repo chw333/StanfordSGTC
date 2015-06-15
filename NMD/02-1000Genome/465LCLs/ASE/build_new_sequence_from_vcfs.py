@@ -1,0 +1,1 @@
+/mnt/larsix/projects/NMD/hansun/MySoft/Seqnature/Seqnature/build_new_sequence_from_vcfs.py
