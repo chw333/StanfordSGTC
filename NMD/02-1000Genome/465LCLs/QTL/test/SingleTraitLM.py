@@ -30,7 +30,7 @@ def SingleTraitLM(inF1, inF2, ouF):
 
 
     for p_ID in phenotype_ID[0:]:
-        try:
+        if p_ID == 'snp_17_59667953':
         #phenotype_vals, sample_idx = dataset.getPhenotypes([pI], center=False)
             phenotype_vals, sample_idx = dataset.getPhenotypes([p_ID])
             phenotype_vals_ranks = preprocess.rankStandardizeNormal(phenotype_vals.values)
@@ -41,10 +41,6 @@ def SingleTraitLM(inF1, inF2, ouF):
                 p = pvt[i,0]
                 if p < SIG:
                     ouFile.write('\t'.join([position['chrom'][i], str(position['pos'][i]), str(p), p_ID]) + '\n')
-        except:
-            print(p_ID)
-            print(phenotype_vals)
-            print(phenotype_vals_ranks)
     ouFile.close()
 
 
@@ -53,8 +49,7 @@ def manhattonPlot(phenotype_ID, pvalues_lm, ouFprefix, pos, chromBounds):
         pl.figure(figsize=[12,4])
         plot_manhattan(posCum=pos['pos_cum'],pv=pvalues_lm[p_ID].values,chromBounds=chromBounds,thr_plotting=0.05)
         pl.title(p_ID)
-        #pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
-        pl.savefig(ouFprefix + '.' + p_ID + '.png')
+        pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
         pl.close('all')
 
 
@@ -80,10 +75,7 @@ def SingleTraitLM_ManhattonPlot(inF1, inF2, SigPhe):
             pvalues_lm_ranks = pd.DataFrame(data=lm_ranks.pvalues.T,index=dataset.geno_ID,columns=[p_ID])
             manhattonPlot([p_ID], pvalues_lm_ranks, 'NMD-QTL-ManhattonPlot', pos, chromBounds)
 
-SingleTraitLM_ManhattonPlot('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','snp_6_31124849')
-SingleTraitLM_ManhattonPlot('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','snp_11_62369881')
-SingleTraitLM_ManhattonPlot('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','snp_5_139936760')
-SingleTraitLM_ManhattonPlot('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','snp_17_74077797')
+#SingleTraitLM_ManhattonPlot('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','snp_6_31124849')
 
-#SingleTraitLM('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','Single-Trait-lm-Sig')
+SingleTraitLM('1000Genome-462LCLs-Genotype.hdf5','1000Genome-462LCLs-Phenotype.hdf5','Single-Trait-lm-Sig')
 

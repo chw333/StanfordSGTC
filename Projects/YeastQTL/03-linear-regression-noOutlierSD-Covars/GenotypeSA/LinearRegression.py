@@ -21,6 +21,8 @@ dataset = data.QTLData(geno_reader=geno_reader,pheno_reader=pheno_reader)
 geno = dataset.getGenotypes()
 position = dataset.getPos()
 pos,chromBounds = data_util.estCumPos(position=position,offset=0)
+#pos,chromBounds = data_util.estCumPosSorted(position=position,offset=0,chroms=['II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI'])
+pos,chromBounds = data_util.estCumPosSorted(position=position,offset=0)
 P_max = len(dataset.phenotype_ID)
 #P_max = 6
 phenotype_ID = dataset.phenotype_ID[0:P_max:2]

@@ -6,7 +6,7 @@ import random
 
 def boxplot(data, marker, gene):
     if len(data[2]) > 0:
-        title = marker + ':' + gene
+        #title = marker + ':' + gene
         group = ['0/0', '0/1', '1/1']
     
         fig = pl.figure()
@@ -25,10 +25,11 @@ def boxplot(data, marker, gene):
         #pl.plot(X4,data[3],'g.')
         ax.set_xticklabels(['']+group+[''])
         ax.set_ylabel('NMD Efficiency')
-        ax.set_title(title)
+        ax.set_xlabel(marker)
+        ax.set_title(gene)
         pl.savefig('NMD-QTL-boxplot-%s-%s.pdf'%(marker,gene))
     else:
-        title = marker + ':' + gene
+        #title = marker + ':' + gene
         group = ['0/0', '0/1']
     
         fig = pl.figure()
@@ -47,7 +48,8 @@ def boxplot(data, marker, gene):
         #pl.plot(X4,data[3],'g.')
         ax.set_xticklabels(['']+group+[''])
         ax.set_ylabel('NMD Efficiency')
-        ax.set_title(title)
+        ax.set_title(gene)
+        ax.set_xlabel(marker)
         pl.savefig('NMD-QTL-boxplot-%s-%s.pdf'%(marker,gene))
 
 
@@ -106,8 +108,14 @@ def geno(pos, snp):
  
 
     data = [L00, L01, L11]
+    print(sorted(L00))
+    print(sorted(L01))
+    print(sorted(L11))
     boxplot(data,pos, snp)
     inFile.close()
     ouFile.close()
 
 geno('6_31125705','snp_6_31124849')
+#geno('11_62367186','snp_11_62369881')
+#geno('15_24858612','snp_5_139936760')
+#geno('3_29748169','snp_17_74077797')

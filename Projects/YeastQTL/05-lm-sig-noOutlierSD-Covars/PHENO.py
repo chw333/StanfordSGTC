@@ -1,0 +1,1 @@
+/mnt/larsix/projects/NMD/hansun/Projects/YeastQTL/03-linear-regression-noOutlierSD-Covars/GenotypeSA/PHENO.py

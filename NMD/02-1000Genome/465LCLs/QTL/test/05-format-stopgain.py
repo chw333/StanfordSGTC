@@ -11,19 +11,19 @@ def format(inF):
         fields = line.split('\t')
         snp = fields[0]
         count = int(fields[1])
-        if snp != 'snp_17_59667953':
-            if count >= 20:
-                SNP.append(snp)
-            for item in fields[2:]:
-                its = item.split(':')
-                sample = its[0].split('.')[0]
-                ref = float(its[-3])
-                alt = float(its[-2])
-                val = alt/(ref + 1)
-                D.setdefault(sample, {})
-                D[sample].setdefault(snp, '')
-                #D[sample][snp] = ref + ':' + alt
-                D[sample][snp] = '%.2f'%val
+#        if snp != 'snp_17_59667953':
+        if count >= 20:
+            SNP.append(snp)
+        for item in fields[2:]:
+            its = item.split(':')
+            sample = its[0].split('.')[0]
+            ref = float(its[-3])
+            alt = float(its[-2])
+            val = alt/(ref + 1)
+            D.setdefault(sample, {})
+            D[sample].setdefault(snp, '')
+            #D[sample][snp] = ref + ':' + alt
+            D[sample][snp] = '%.2f'%val
     inFile.close()
 
     for snp in SNP:
