@@ -2,8 +2,8 @@ import os
 import gzip
 from PHENO import NAME
 
-Fs = os.listdir('.')
 def permutation(inF, pv, inD):
+    Fs = os.listdir(inD)
     D = {}
     inFile = open(inF)
     head = inFile.readline().strip().split('\t')
@@ -21,7 +21,7 @@ def permutation(inF, pv, inD):
 
     for F in Fs:
         if F[-3:] == '.gz':
-            f = gzip.open(F, 'rb')
+            f = gzip.open(inD + '/' + F, 'rb')
             content = f.readlines()
             for item in content:
                 fields = item.strip().split('\t')
@@ -48,6 +48,7 @@ def permutation(inF, pv, inD):
 
         pv2 = D[k][0]
         perm = D[k][1]
+        print(perm)
         if pv2 != pv:
             print('Error')
         else:
@@ -69,5 +70,4 @@ def permutation(inF, pv, inD):
 
 
 
-#permutation('Yeast-QTL-lm-Sig-0.001.txt', 'NA-untransformed-pvalue', '/mnt/larsix/projects/NMD/hansun/Projects/YeastQTL/03-linear-regression-noOutlierSD-Covars/GenotypeSA/Permutation')
-permutation('Yeast-QTL-lm-Sig-0.001.txt', 'NA-untransformed-pvalue', '/mnt/larsix/projects/NMD/hansun/Projects/YeastQTL/03-linear-regression-noOutlierSD-Covars/GenotypeNA')
+permutation('Yeast-QTL-lm-Sig-0.001.txt', 'NA-untransformed-pvalue', '/mnt/larsix/projects/NMD/hansun/Projects/YeastQTL/03-linear-regression-noOutlierSD-Covars/GenotypeSA/Permutation')
