@@ -14,28 +14,28 @@ def exp(inF):
                 gt = stopgain.split(':')[-3]
                 ase = stopgain.split(':')[-2:]
                 if gt == '0|1':
-                    L = [stopgain+'#'+ase[0]+'%'+ase[1]]
+                    L = [stopgain+'#'+ase[0]+':'+ase[1]]
                     for im in ims[1:]:
                         gt = im.split(':')[-3]
                         ase = im.split(':')[-2:]
                         if gt == '0|1':
-                            L.append(ase[0] + '%' + ase[1])
+                            L.append(im + '#' + ase[0] + ':' + ase[1])
                         elif gt == '1|0':
-                            L.append(ase[1] + '%' + ase[0])
+                            L.append(im + '#' + ase[1] + ':' + ase[0])
                         else:
                             print('Warning')
                 elif gt == '1|0':
-                    L = [stopgain+'#'+ase[0]+'%'+ase[1]]
+                    L = [stopgain+'#'+ase[0]+':'+ase[1]]
                     for im in ims[1:]:
                         gt = im.split(':')[-3]
                         ase = im.split(':')[-2:]
                         if gt == '1|0':
-                            L.append(ase[0] + '%' + ase[1])
+                            L.append(im + '#' + ase[0] + ':' + ase[1])
                         elif gt == '0|1':
-                            L.append(ase[1] + '%' + ase[0])
+                            L.append(im + '#' + ase[1] + ':' + ase[0])
                         else:
                             print('Warning')
-                LS.append('_'.join(L))
+                LS.append('+'.join(L))
             ouFile.write(sample + '\t' + num + '\t' + '\t'.join(LS) + '\n')
 
                 
