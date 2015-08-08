@@ -1,3 +1,11 @@
+D = {}
+inFile = open('G462-Sample-Stopgain-Exon-Escape')
+for line in inFile:
+    line = line.strip()
+    fields = line.split('\t')
+    D[fields[0]] = fields[-1]
+inFile.close()
+
 def exp(inF):
     inFile = open(inF)
     ouFile = open(inF+'-Formated', 'w')
@@ -13,8 +21,14 @@ def exp(inF):
                 stopgain = ims[0]
                 gt = stopgain.split(':')[-3]
                 ase = stopgain.split(':')[-2:]
+                snp = stopgain.split(':')[0]
+                if D[snp] == 'T':
+                    esc = 'Escaped'
+                else:
+                    esc = 'unEscaped'
+                
                 if gt == '0|1':
-                    L = [stopgain+'#'+ase[0]+':'+ase[1]]
+                    L = [esc + '#' + stopgain+'#'+ase[0]+':'+ase[1]]
                     for im in ims[1:]:
                         gt = im.split(':')[-3]
                         ase = im.split(':')[-2:]
@@ -25,7 +39,7 @@ def exp(inF):
                         else:
                             print('Warning')
                 elif gt == '1|0':
-                    L = [stopgain+'#'+ase[0]+':'+ase[1]]
+                    L = [esc + '#' + stopgain+'#'+ase[0]+':'+ase[1]]
                     for im in ims[1:]:
                         gt = im.split(':')[-3]
                         ase = im.split(':')[-2:]
