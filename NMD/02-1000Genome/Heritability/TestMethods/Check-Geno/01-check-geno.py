@@ -1,6 +1,7 @@
 import os
 
 DIR = '/mnt/larsix/projects/NMD/hansun/NMD/02-1000Genome/465LCLs'
+DIR = '/mnt/larsix/projects/NMD/hansun/NMD/02-1000Genome/Heritability/TestMethods/Check-Geno'
 Fs = os.listdir(DIR)
 D = {}
 for F in Fs:
@@ -18,7 +19,7 @@ for F in Fs:
                 if len(head) == len(fields):
                     for i in range(9,len(head)):
                         k = head[i] + ':' + snp
-                        D[k] = fields[i]
+                        D[k] = fields[i].split(':')[0]
         inFile.close()
 
 #inFile = open('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated')
