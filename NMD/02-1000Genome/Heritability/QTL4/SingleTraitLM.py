@@ -42,7 +42,7 @@ def SingleTraitLM(inF1, inF2, ouF):
                 ouFile.write('\t'.join([position['chrom'][i], str(position['pos'][i]), str(p), p_ID]) + '\n')
     ouFile.close()
 
-    manhattonPlot(['NMD'],pvalues_lm_ranks,inF2,pos, chromBounds)
+    manhattonPlot(['NMD'],pvalues_lm_ranks,'QTL-lm-significant-rank',pos, chromBounds)
 
     pl.figure(figsize=[12,4])
     qqplot(pvalues_lm_ranks['NMD'].values)
@@ -57,8 +57,8 @@ def manhattonPlot(phenotype_ID, pvalues_lm, ouFprefix, pos, chromBounds):
         pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
         pl.close('all')
 
-SingleTraitLM('1000Genome-462LCLs-Genotype-Sample.hdf5','G462-Sample-Stopgain-ASE-Escape-Filtered-Median.hdf5','Single-Trait-lm-Sig')
-#SingleTraitLM('1000Genome-462LCLs-Genotype-Sample2.hdf5','G462-Sample-Stopgain-ASE-Escape-Filtered2-Median.hdf5','Single-Trait-lm-Sig2')
+SingleTraitLM('1000Genome-462LCLs-Genotype-Sample.hdf5','G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Filtered-Median-Sample-Head.hdf5','Single-Trait-lm-Sig')
+SingleTraitLM('1000Genome-462LCLs-Genotype-Sample2.hdf5','G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Filtered-Median-Sample2-Head.hdf5','Single-Trait-lm-Sig2')
 
 '''
 

@@ -11,8 +11,8 @@ for line in inFile:
     G[gene].append([ch,start,end])
 inFile.close()
 
-inFile = open('Single-Trait-lm-Sig2-Sorted')
-ouFile = open('Single-Trait-lm-Sig2-Sorted-Gene', 'w')
+inFile = open('Single-Trait-lm-Sig2')
+ouFile = open('Single-Trait-lm-Sig2-Gene', 'w')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')

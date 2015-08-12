@@ -58,7 +58,7 @@ def manhattonPlot(phenotype_ID, pvalues_lm, ouFprefix, pos, chromBounds):
         pl.close('all')
 
 SingleTraitLM('1000Genome-462LCLs-Genotype-Sample.hdf5','G462-Sample-Stopgain-ASE-Escape-Filtered-Median.hdf5','Single-Trait-lm-Sig')
-#SingleTraitLM('1000Genome-462LCLs-Genotype-Sample2.hdf5','G462-Sample-Stopgain-ASE-Escape-Filtered2-Median.hdf5','Single-Trait-lm-Sig2')
+SingleTraitLM('1000Genome-462LCLs-Genotype-Sample2.hdf5','G462-Sample-Stopgain-ASE-Escape-Filtered2-Median.hdf5','Single-Trait-lm-Sig2')
 
 '''
 

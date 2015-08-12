@@ -16,7 +16,7 @@ def StopGain(L):
             s0 += item[0]
             s1 += item[1]
     if s0 >0 and s1 > 0:
-        return(float(s1) / float(s0))
+        return(str(s0) + ':' + str(s1))
     else:
         return(-1)
 
