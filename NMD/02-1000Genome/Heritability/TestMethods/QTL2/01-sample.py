@@ -1,5 +1,5 @@
 D = {}
-inFile = open('1000Genome-465LCLs-Genotype-Filt-Trans')
+inFile = open('1000Genome-462LCLs-Genotype')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')

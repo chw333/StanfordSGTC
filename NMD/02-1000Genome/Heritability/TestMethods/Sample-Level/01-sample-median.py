@@ -1,13 +1,4 @@
 import numpy
-D = {}
-inFile = open('G462-Sample-Stopgain-Exon-Escape')
-for line in inFile:
-    line = line.strip()
-    fields = line.split('\t')
-    if fields[4] == 'F':
-        D[fields[0]] = fields[4]
-inFile.close()
-
 def median(inF):
     inFile = open(inF)
     ouFile = open(inF + '-Median', 'w')
@@ -32,10 +23,13 @@ def median(inF):
                     LF.append(0)
                 else:
                     LF.append(1)
-            #if 0 not in LF or 1 not in LF:
-            if LF.count(0) < 2 or LF.count(1) < 2:
-                med = numpy.median(L)
-                ouFile.write(sample + '\t' + str(med) + '\n')
+            if 0 not in LF or 1 not in LF:
+            #if LF.count(0) < 2 or LF.count(1) < 2:
+                if len(LF)> 1:
+                    med = numpy.median(L)
+                    ouFile.write(sample + '\t' + str(med) + '\n')
+                else:
+                    print(sample)
             #else:
             #    print(sample)
 
@@ -44,4 +38,5 @@ def median(inF):
     ouFile.close()
 
 
-median('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-SumSNV')
+#median('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-SumSNV')
+median('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-MedianSNV')

@@ -2,9 +2,8 @@ import numpy as np
 
 
 def StopGain(L):
-    #### sum
-    s0 = 0
-    s1 = 0
+    #### median
+    S = []
     for item in L:
         if item[0] == -1 or item[1] == -1:
             pass
@@ -13,12 +12,20 @@ def StopGain(L):
         #elif item[0] + item[1] < 20:
         #    pass
         else:
-            s0 += item[0]
-            s1 += item[1]
-    if s0 >0 and s1 > 0:
-        return(float(s1) / float(s0))
-    else:
-        return(-1)
+            s = float(item[1]) / float(item[0])
+            S.append(s)
+    LS = []
+    for x in S:
+        if x <= 1:
+            LS.append(0)
+        else:
+            LS.append(1)
+    if 0 not in LS or 1 not in LS:
+        if len(S) > 1:
+            return(np.median(S))
+        else:
+            return(-1)
+    else
 
 
 
@@ -26,7 +33,7 @@ def StopGain(L):
 
 def snv(inF):
     inFile = open(inF)
-    ouFile = open(inF + '-SumSNV', 'w')
+    ouFile = open(inF + '-MedianSNV', 'w')
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')

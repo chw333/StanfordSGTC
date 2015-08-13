@@ -29,7 +29,7 @@ def geno2hdf5(inF, inF2):
     print(len(geno))
     print(len(geno[0]))
  
-geno2hdf5('1000Genome-462LCLs-Genotype-Sample', '1000Genome-465LCLs-Genotype-Filt-Pos')
+geno2hdf5('1000Genome-462LCLs-Genotype-Sample', '1000Genome-462LCLs-Position')
 
 def Pheno2hdf5(inF):
     hdf = h5py.File(inF + '.hdf5', 'w')
