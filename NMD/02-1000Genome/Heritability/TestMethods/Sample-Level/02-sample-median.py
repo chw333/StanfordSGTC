@@ -14,7 +14,8 @@ def median(inF):
 
             val = float(item.split('#')[-1])
             if esc == 'unEscaped':
-                L.append(val)
+                if val < 1:
+                    L.append(val)
         if L:
             #L.sort()
             LF = []

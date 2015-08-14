@@ -5,6 +5,7 @@ def StopGain(L):
     #### sum
     s0 = 0
     s1 = 0
+    S = []
     for item in L:
         if item[0] == -1 or item[1] == -1:
             pass
@@ -15,8 +16,15 @@ def StopGain(L):
         else:
             s0 += item[0]
             s1 += item[1]
+            if s0 >= s1:
+                S.append(0)
+            else:
+                S.append(1)
     if s0 >0 and s1 > 0:
-        return(float(s1) / float(s0))
+        if 0 not in S or 1 not in S:
+            return(float(s1) / float(s0))
+        else:
+            return(-1)
     else:
         return(-1)
 

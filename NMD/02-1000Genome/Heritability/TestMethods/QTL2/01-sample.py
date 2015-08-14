@@ -7,7 +7,7 @@ for line in inFile:
 inFile.close()
 
 
-inFile = open('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-MedianSNV-Median')
+inFile = open('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-SumSNV-Median')
 ouFile = open('1000Genome-462LCLs-Genotype-Sample', 'w')
 head = inFile.readline()
 for line in inFile:

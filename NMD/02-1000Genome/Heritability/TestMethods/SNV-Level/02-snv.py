@@ -25,7 +25,8 @@ def StopGain(L):
             return(np.median(S))
         else:
             return(-1)
-    else
+    else:
+        return(-1)
 
 
 

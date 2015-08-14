@@ -50,6 +50,6 @@ def Pheno2hdf5(inF):
     print(len(pheno[0]))
 
 
-Pheno2hdf5('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-MedianSNV-Median')
+Pheno2hdf5('G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-SumSNV-Median')
 
 

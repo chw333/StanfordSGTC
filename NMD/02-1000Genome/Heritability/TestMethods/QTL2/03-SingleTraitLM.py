@@ -57,7 +57,7 @@ def manhattonPlot(phenotype_ID, pvalues_lm, ouFprefix, pos, chromBounds):
         pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
         pl.close('all')
 
-SingleTraitLM('1000Genome-462LCLs-Genotype-Sample.hdf5','G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-MedianSNV-Median.hdf5','Single-Trait-lm-Sig')
+SingleTraitLM('1000Genome-462LCLs-Genotype-Sample.hdf5','G462-Sample-Stopgain-Linkage-TranscriptLevel-Sample-Genotype-Expressed-Formated-Gene-SumSNV-Median.hdf5','Single-Trait-lm-Sig')
 
 '''
 
