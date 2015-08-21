@@ -10,6 +10,7 @@ for F in Fs:
         ouFile.write('bowtie2 -p 8 -x /mnt/larsix/projects/NMD/hansun/Data/Ensembl/bowtie2/Homo_sapiens.GRCh38 -U %s | samtools view -q 30 -bS - | samtools sort - %s\n'%(F, pre))
         ouFile.write('samtools index %s.bam\n'%(pre))
         ouFile2.write('bowtie2 -p 8 -x /mnt/larsix/projects/NMD/hansun/Data/Ensembl/bowtie2/Homo_sapiens.GRCh38 -U %s | samtools view -bS - | samtools sort - %s\n'%(F, pre_all))
+        ouFile2.write('samtools index %s.bam\n'%(pre_all))
 ouFile.close()
 ouFile2.close()
 

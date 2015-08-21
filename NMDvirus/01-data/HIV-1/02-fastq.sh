@@ -1,0 +1,11 @@
+fastq-dump SRR497699.sra
+fastq-dump SRR497700.sra
+fastq-dump SRR497701.sra
+fastq-dump SRR497702.sra
+fastq-dump SRR497703.sra
+fastq-dump SRR497704.sra
+fastq-dump SRR497705.sra
+fastq-dump SRR497706.sra
+fastq-dump SRR497707.sra
+fastq-dump SRR497708.sra
+fastq-dump SRR497709.sra
