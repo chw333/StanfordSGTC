@@ -4,14 +4,14 @@ for x in range(1, 11):
     Sample.append('S' + str(x) + '-WNV.count')
 
 D = {}
-for s in S:
+for sample in Sample:
     G = []
     D.setdefault(sample, {})
 
     inFile = open(sample)
     for line in inFile:
         line = line.strip()
-        if line.find('__') == 0:
+        if line.find('__') != 0:
             fields = line.split('\t')
             gene = fields[0]
             num = fields[1]
@@ -20,7 +20,7 @@ for s in S:
     inFile.close()
 
 ouFile = open('WNV-GeneCount', 'w')
-ouFile.write('Gene' + '\t' + '\t'.join([x.split('.count')[0] for x in Sample]) + '\n')
+ouFile.write('' + '\t' + '\t'.join([x.split('.count')[0] for x in Sample]) + '\n')
 
 for gene in G:
     L = []
