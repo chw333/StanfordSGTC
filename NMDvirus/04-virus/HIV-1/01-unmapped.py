@@ -4,8 +4,8 @@ import subprocess
 Fs = os.listdir('.')
 
 for F in Fs:
-    if F[-8:] == '.all.bam':
-        ouFile = open(F.split('.all.bam')[0] + '-unmapped.fq', 'w')
+    if F[-13:] == '-unmapped.bam':
+        ouFile = open(F.split('-unmapped.bam')[0] + '-unmapped.fq', 'w')
         p = subprocess.Popen(['samtools','view', F], stdout=subprocess.PIPE)
         for line in p.stdout:
             line = line.strip()
