@@ -23,3 +23,4 @@ G = ['SMG']
 check(G)
 G = ['SRSF2', 'ASNS', 'CARS']
 check(G)
+G = ['GAS5', 'DCLK1']

@@ -1,10 +1,10 @@
 D = {}
-inFile = open('deWNV_sig_proteincoding.txt')
+inFile = open('deWNV_sig_proteincoding_GLM.txt')
 head = inFile.readline()
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    gene = fields[7]
+    gene = fields[6]
     D.setdefault(gene, [])
     D[gene].append(line)
 inFile.close()
