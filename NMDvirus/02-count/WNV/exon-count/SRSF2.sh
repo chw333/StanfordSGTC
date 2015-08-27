@@ -1,0 +1,1 @@
+bedtools multicov -bams  S1-Mock.bam S1-WNV.bam S2-Mock.bam S2-WNV.bam S3-Mock.bam S3-WNV.bam S4-Mock.bam S4-WNV.bam S5-Mock.bam S5-WNV.bam S6-Mock.bam S6-WNV.bam S7-Mock.bam S7-WNV.bam S8-Mock.bam S8-WNV.bam S9-Mock.bam S9-WNV.bam  S10-Mock.bam S10-WNV.bam -bed SRSF2.bed
