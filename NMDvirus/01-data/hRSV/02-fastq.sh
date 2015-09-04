@@ -1,40 +1,20 @@
-fastq-dump SRR1046363.sra
-gzip SRR1046363.fastq
-fastq-dump SRR1046364.sra
-gzip SRR1046364.fastq
-fastq-dump SRR1046682.sra
-gzip SRR1046682.fastq
-fastq-dump SRR1046683.sra
-gzip SRR1046683.fastq
-fastq-dump SRR1046685.sra
-gzip SRR1046685.fastq
-fastq-dump SRR1046686.sra
-gzip SRR1046686.fastq
-fastq-dump SRR1046797.sra
-gzip SRR1046797.fastq
-fastq-dump SRR1046798.sra
-gzip SRR1046798.fastq
-fastq-dump SRR1046814.sra
-gzip SRR1046814.fastq
-fastq-dump SRR1046815.sra
-gzip SRR1046815.fastq
-fastq-dump SRR1046816.sra
-gzip SRR1046816.fastq
-fastq-dump SRR1046817.sra
-gzip SRR1046817.fastq
-fastq-dump SRR1046823.sra
-gzip SRR1046823.fastq
-fastq-dump SRR1046824.sra
-gzip SRR1046824.fastq
-fastq-dump SRR1046825.sra
-gzip SRR1046825.fastq
-fastq-dump SRR1046826.sra
-gzip SRR1046826.fastq
-fastq-dump SRR1046834.sra
-gzip SRR1046834.fastq
-fastq-dump SRR1046835.sra
-gzip SRR1046835.fastq
-fastq-dump SRR1046836.sra
-gzip SRR1046836.fastq
-fastq-dump SRR1046837.sra
-gzip SRR1046837.fastq
+fastq-dump --split-files --gzip SRR1046363.sra
+fastq-dump --split-files --gzip SRR1046364.sra
+fastq-dump --split-files --gzip SRR1046682.sra
+fastq-dump --split-files --gzip SRR1046683.sra
+fastq-dump --split-files --gzip SRR1046685.sra
+fastq-dump --split-files --gzip SRR1046686.sra
+fastq-dump --split-files --gzip SRR1046797.sra
+fastq-dump --split-files --gzip SRR1046798.sra
+fastq-dump --split-files --gzip SRR1046814.sra
+fastq-dump --split-files --gzip SRR1046815.sra
+fastq-dump --split-files --gzip SRR1046816.sra
+fastq-dump --split-files --gzip SRR1046817.sra
+fastq-dump --split-files --gzip SRR1046823.sra
+fastq-dump --split-files --gzip SRR1046824.sra
+fastq-dump --split-files --gzip SRR1046825.sra
+fastq-dump --split-files --gzip SRR1046826.sra
+fastq-dump --split-files --gzip SRR1046834.sra
+fastq-dump --split-files --gzip SRR1046835.sra
+fastq-dump --split-files --gzip SRR1046836.sra
+fastq-dump --split-files --gzip SRR1046837.sra

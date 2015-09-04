@@ -1,0 +1,10 @@
+htseq-count -f bam -s no HCV130_rep1.bam Homo_sapiens.GRCh38.81.gtf > HCV130_rep1.count
+htseq-count -f bam -s no Mock130_rep1.bam Homo_sapiens.GRCh38.81.gtf > Mock130_rep1.count
+htseq-count -f bam -s no Mock110_rep3.bam Homo_sapiens.GRCh38.81.gtf > Mock110_rep3.count
+htseq-count -f bam -s no Mock130_rep3.bam Homo_sapiens.GRCh38.81.gtf > Mock130_rep3.count
+htseq-count -f bam -s no HCV130_rep3.bam Homo_sapiens.GRCh38.81.gtf > HCV130_rep3.count
+htseq-count -f bam -s no HCV110_rep3.bam Homo_sapiens.GRCh38.81.gtf > HCV110_rep3.count
+htseq-count -f bam -s no Mock130_rep2.bam Homo_sapiens.GRCh38.81.gtf > Mock130_rep2.count
+htseq-count -f bam -s no Mock110_rep2.bam Homo_sapiens.GRCh38.81.gtf > Mock110_rep2.count
+htseq-count -f bam -s no HCV110_rep2.bam Homo_sapiens.GRCh38.81.gtf > HCV110_rep2.count
+htseq-count -f bam -s no HCV130_rep2.bam Homo_sapiens.GRCh38.81.gtf > HCV130_rep2.count
