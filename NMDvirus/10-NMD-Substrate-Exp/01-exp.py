@@ -76,8 +76,8 @@ Virus = ['HCV','WNV','RSV','KHSV','HSV1','HIV1']
 for v in Virus:
     L = []
     for gene in Gs:
-        #L.append(':'.join(Exp[v][gene][0]))
-        L.append(Exp[v][gene][0][1])
+        L.append(':'.join(Exp[v][gene][0]))
+        #L.append(Exp[v][gene][0][1])
     ouFile.write(v + '\t' + '\t'.join(L) + '\n')
 
 ouFile.close()
