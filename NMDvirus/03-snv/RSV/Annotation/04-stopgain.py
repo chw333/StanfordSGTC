@@ -1,4 +1,5 @@
-Sample = ['HRSV0h-rep1.flt.anno.exonic_variant_function','HRSV0h-rep2.flt.anno.exonic_variant_function','HRSV12h-rep1.flt.anno.exonic_variant_function','HRSV12h-rep2.flt.anno.exonic_variant_function','HRSV16h-rep1.flt.anno.exonic_variant_function','HRSV16h-rep2.flt.anno.exonic_variant_function']
+Sample = ['HRSV0h-rep1.flt.anno.exonic_variant_function','HRSV0h-rep2.flt.anno.exonic_variant_function','HRSV2h-rep1.flt.anno.exonic_variant_function','HRSV2h-rep2.flt.anno.exonic_variant_function','HRSV4h-rep1.flt.anno.exonic_variant_function','HRSV4h-rep2.flt.anno.exonic_variant_function','HRSV8h-rep1.flt.anno.exonic_variant_function','HRSV8h-rep2.flt.anno.exonic_variant_function','HRSV12h-rep1.flt.anno.exonic_variant_function','HRSV12h-rep2.flt.anno.exonic_variant_function','HRSV16h-rep1.flt.anno.exonic_variant_function','HRSV16h-rep2.flt.anno.exonic_variant_function','HRSV20h-rep1.flt.anno.exonic_variant_function','HRSV20h-rep2.flt.anno.exonic_variant_function','HRSV24h-rep1.flt.anno.exonic_variant_function','HRSV24h-rep2.flt.anno.exonic_variant_function']
+
 L = []
 for s in Sample:
     sa = s.split('.')[0]

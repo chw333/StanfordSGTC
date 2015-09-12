@@ -1,6 +1,16 @@
+convert2annovar.pl -format vcf4 HRSV24h-rep2.flt.vcf -outfile HRSV24h-rep2.flt.anno
 convert2annovar.pl -format vcf4 HRSV0h-rep2.flt.vcf -outfile HRSV0h-rep2.flt.anno
 convert2annovar.pl -format vcf4 HRSV12h-rep2.flt.vcf -outfile HRSV12h-rep2.flt.anno
+convert2annovar.pl -format vcf4 HRSV8h-rep2.flt.vcf -outfile HRSV8h-rep2.flt.anno
+convert2annovar.pl -format vcf4 HRSV20h-rep1.flt.vcf -outfile HRSV20h-rep1.flt.anno
+convert2annovar.pl -format vcf4 HRSV4h-rep1.flt.vcf -outfile HRSV4h-rep1.flt.anno
 convert2annovar.pl -format vcf4 HRSV16h-rep1.flt.vcf -outfile HRSV16h-rep1.flt.anno
+convert2annovar.pl -format vcf4 HRSV2h-rep2.flt.vcf -outfile HRSV2h-rep2.flt.anno
 convert2annovar.pl -format vcf4 HRSV12h-rep1.flt.vcf -outfile HRSV12h-rep1.flt.anno
+convert2annovar.pl -format vcf4 HRSV24h-rep1.flt.vcf -outfile HRSV24h-rep1.flt.anno
 convert2annovar.pl -format vcf4 HRSV0h-rep1.flt.vcf -outfile HRSV0h-rep1.flt.anno
+convert2annovar.pl -format vcf4 HRSV2h-rep1.flt.vcf -outfile HRSV2h-rep1.flt.anno
 convert2annovar.pl -format vcf4 HRSV16h-rep2.flt.vcf -outfile HRSV16h-rep2.flt.anno
+convert2annovar.pl -format vcf4 HRSV20h-rep2.flt.vcf -outfile HRSV20h-rep2.flt.anno
+convert2annovar.pl -format vcf4 HRSV8h-rep1.flt.vcf -outfile HRSV8h-rep1.flt.anno
+convert2annovar.pl -format vcf4 HRSV4h-rep2.flt.vcf -outfile HRSV4h-rep2.flt.anno
