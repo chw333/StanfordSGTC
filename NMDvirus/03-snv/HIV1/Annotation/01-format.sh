@@ -1,0 +1,11 @@
+convert2annovar.pl -format vcf4 Mock_12-rep1.flt.vcf -outfile Mock_12-rep1.flt.anno
+convert2annovar.pl -format vcf4 Mock_24-rep2.flt.vcf -outfile Mock_24-rep2.flt.anno
+convert2annovar.pl -format vcf4 HIV_12-rep3.flt.vcf -outfile HIV_12-rep3.flt.anno
+convert2annovar.pl -format vcf4 HIV_24-rep1.flt.vcf -outfile HIV_24-rep1.flt.anno
+convert2annovar.pl -format vcf4 HIV_12-rep2.flt.vcf -outfile HIV_12-rep2.flt.anno
+convert2annovar.pl -format vcf4 Mock_12-rep2.flt.vcf -outfile Mock_12-rep2.flt.anno
+convert2annovar.pl -format vcf4 HIV_24-rep3.flt.vcf -outfile HIV_24-rep3.flt.anno
+convert2annovar.pl -format vcf4 Mock_24-rep1.flt.vcf -outfile Mock_24-rep1.flt.anno
+convert2annovar.pl -format vcf4 Mock_12-rep3.flt.vcf -outfile Mock_12-rep3.flt.anno
+convert2annovar.pl -format vcf4 HIV_24-rep2.flt.vcf -outfile HIV_24-rep2.flt.anno
+convert2annovar.pl -format vcf4 HIV_12-rep1.flt.vcf -outfile HIV_12-rep1.flt.anno

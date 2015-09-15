@@ -1,0 +1,11 @@
+annotate_variation.pl -buildver hg38 HIV_12-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 HIV_12-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 HIV_12-rep3.flt.anno humandb
+annotate_variation.pl -buildver hg38 HIV_24-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 HIV_24-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 HIV_24-rep3.flt.anno humandb
+annotate_variation.pl -buildver hg38 Mock_12-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 Mock_12-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 Mock_12-rep3.flt.anno humandb
+annotate_variation.pl -buildver hg38 Mock_24-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 Mock_24-rep2.flt.anno humandb

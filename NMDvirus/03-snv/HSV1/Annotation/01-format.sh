@@ -1,0 +1,10 @@
+convert2annovar.pl -format vcf4 HSV6h-Rep1.flt.vcf -outfile HSV6h-Rep1.flt.anno
+convert2annovar.pl -format vcf4 Mock-Rep1.flt.vcf -outfile Mock-Rep1.flt.anno
+convert2annovar.pl -format vcf4 HSV2h-Rep2.flt.vcf -outfile HSV2h-Rep2.flt.anno
+convert2annovar.pl -format vcf4 HSV4h-Rep1.flt.vcf -outfile HSV4h-Rep1.flt.anno
+convert2annovar.pl -format vcf4 HSV8h-Rep2.flt.vcf -outfile HSV8h-Rep2.flt.anno
+convert2annovar.pl -format vcf4 Mock-Rep2.flt.vcf -outfile Mock-Rep2.flt.anno
+convert2annovar.pl -format vcf4 HSV6h-Rep2.flt.vcf -outfile HSV6h-Rep2.flt.anno
+convert2annovar.pl -format vcf4 HSV4h-Rep2.flt.vcf -outfile HSV4h-Rep2.flt.anno
+convert2annovar.pl -format vcf4 HSV8h-Rep1.flt.vcf -outfile HSV8h-Rep1.flt.anno
+convert2annovar.pl -format vcf4 HSV2h-Rep1.flt.vcf -outfile HSV2h-Rep1.flt.anno
