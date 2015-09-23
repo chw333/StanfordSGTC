@@ -41,7 +41,7 @@ def exp(inF1,inF2):
             ouFile.write(g + '\t' + str(D[g][0][0]) + '\t' + str(D[g][0][1]) + '\n')
     ouFile.close()
 
-exp('UPF1-KnockDown-UP-Yepiskoposyan.etal', '/mnt/larsix/projects/NMD/hansun/NMDvirus/05-DESeq/RSV/RSV-geneCounts-Normalized.txt')
+exp('SMG6-KnockDown-UP-Yepiskoposyan.etal', '/mnt/larsix/projects/NMD/hansun/NMDvirus/05-DESeq/RSV/RSV-geneCounts-Normalized.txt')
 
 def plot(inF, ouF):
     df = pd.read_table(inF)
@@ -61,7 +61,7 @@ def plot(inF, ouF):
     plt.savefig(ouF)
 
 
-plot('UPF1-KnockDown-UP-Yepiskoposyan.etal.exp', 'RSV-NMD-Substrates-UPF1-KnockDown.pdf')
+plot('SMG6-KnockDown-UP-Yepiskoposyan.etal.exp', 'RSV-NMD-Substrates-SMG6-KnockDown.pdf')
 
 
 

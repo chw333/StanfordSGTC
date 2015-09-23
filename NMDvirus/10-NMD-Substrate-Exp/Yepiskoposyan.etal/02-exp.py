@@ -28,9 +28,11 @@ def exp(inF1,inF2):
         fields = line.split('\t')
         gene = fields[1]
         D.setdefault(gene, [])
-        mock = (float(fields[2]) + float(fields[3]))/2
-        hcv = (float(fields[4]) + float(fields[5]))/2
-        D[gene].append([mock,hcv])
+        #Mock = (float(fields[2]) + float(fields[3]))/2
+        #HCV = (float(fields[4]) + float(fields[5]))/2
+        Mock = np.median([float(fields[2]), float(fields[3])])
+        HCV = np.median([float(fields[4]), float(fields[5])])
+        D[gene].append([Mock, HCV])
     inFile.close()
     for g in G:
         if g in D:
@@ -44,14 +46,14 @@ exp('UPF1-KnockDown-UP-Yepiskoposyan.etal', '/mnt/larsix/projects/NMD/hansun/NMD
 def plot(inF, ouF):
     df = pd.read_table(inF)
     dfx = df[(df.Mock > 20) & (df.HCV > 20)]
-    dfx.RSV = np.log(dfx.RSV)
+    dfx.HCV = np.log(dfx.HCV)
     dfx.Mock = np.log(dfx.Mock)
     fig = plt.figure()
 
     ax = fig.add_axes([0.1,0.1,0.8,0.8])
     #ax.set_xlim(2,14)
     #ax.set_ylim(2,14)
-    p = dfx.plot(kind='scatter', x='RSV', y='Mock', color='blue',edgecolor='blue', ax=ax)
+    p = dfx.plot(kind='scatter', x='HCV', y='Mock', color='blue',edgecolor='blue', ax=ax)
     p.set_xlim(2,14)
     p.set_ylim(2,14)
     p.plot([2,14],[2,14])
@@ -59,7 +61,7 @@ def plot(inF, ouF):
     plt.savefig(ouF)
 
 
-plot('UPF1-KnockDown-UP-Yepiskoposyan.etal.exp', 'NMD-Substrates-UPF1-KnockDown.pdf')
+plot('UPF1-KnockDown-UP-Yepiskoposyan.etal.exp', 'HCV-NMD-Substrates-UPF1-KnockDown.pdf')
 
 
 
