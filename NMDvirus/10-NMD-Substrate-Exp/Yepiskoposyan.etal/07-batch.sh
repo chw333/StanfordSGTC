@@ -1,0 +1,10 @@
+python 01-C-exp.py
+Rscript 06-ttest.R
+python 02-C-exp.py
+Rscript 06-ttest.R
+python 03-C-exp.py
+Rscript 06-ttest.R
+python 04-C-exp.py
+Rscript 06-ttest.R
+python 05-C-exp.py
+Rscript 06-ttest.R

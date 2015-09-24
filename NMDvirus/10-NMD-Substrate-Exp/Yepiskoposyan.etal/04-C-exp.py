@@ -37,7 +37,8 @@ def exp(inF1,inF2):
     for g in G:
         if g in D:
             if len(D[g]) > 1:
-                print(D[g])
+                #print(D[g])
+                pass
             ouFile.write(g + '\t' + str(D[g][0][0]) + '\t' + str(D[g][0][1]) + '\n')
     ouFile.close()
 
@@ -54,8 +55,10 @@ def plot(inF, ouF):
     p = dfx.plot(kind='scatter', x='HSV', y='Mock', color='blue',edgecolor='blue', ax=ax)
     p.set_xlim(2,14)
     p.set_ylim(2,14)
+    p.set_xlabel('HSV-1')
+    p.text(8, 13, 'p-value = 0.42', va='center', ha='center', fontsize=14, color='r')
     p.plot([2,14],[2,14])
-    plt.title('NMD substrates normalized expression')
+    plt.title('NMD substrates normalized expression (log2)')
     plt.savefig(ouF)
 
 
