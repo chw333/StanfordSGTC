@@ -18,11 +18,13 @@ for F in Fs:
                 RPB = -1
                 MQSB = -1
                 DP4 = -1
+                DP4ref = -1
+                DP4alt = -1
                 filtered = 0
 
                 info = line.split('\t')[7].split(';')
                 ch = line.split('\t')[0]
-                if ch != 'chrM':
+                if ch != 'chrM' and line.find('INDEL') == -1:
                     for x in info:
                         if x.find('DP=') == 0:
                             DP = int(x.split('DP=')[1])
@@ -37,28 +39,22 @@ for F in Fs:
                             DP4ref = int(DP4[0]) + int(DP4[1])
                             DP4alt = int(DP4[2]) + int(DP4[3])
     
-                        if DP != -1:
-                            if 20 < DP < 1000:
-                                pass
-                            else:
-                                filtered = 1
-                        if VDB != -1 and VDB < 0.0001:
+                    if DP != -1:
+                        if 20 < DP < 1000:
+                            pass
+                        else:
                             filtered = 1
-                        if RPB != -1 and RPB < 0.0001:
+                    if VDB != -1 and VDB < 0.0001:
+                        filtered = 1
+                    if RPB != -1 and RPB < 0.0001:
+                        filtered = 1
+                    if MQSB != -1 and MQSB < 0.0001:
+                        filtered = 1
+                    if DP4 != -1:
+                        if DP4alt >= 5:
+                            pass
+                        else:
                             filtered = 1
-                        if MQSB != -1 and MQSB < 0.0001:
-                            filtered = 1
-                        if DP4 != -1:
-                            if DP4ref <= 5:
-                                if DP4alt >= 10:
-                                    pass
-                                else:
-                                    filtered = 1
-                            else:
-                                if DP4ref >= 10 and DP4alt >= 10:
-                                    pass
-                                else:
-                                    filtered = 1
                     if not filtered:
                         ouFile.write(line + '\n')
                     else:
