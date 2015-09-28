@@ -38,23 +38,23 @@ for F in Fs:
                             pass
                         else:
                             filtered = 1
-                    if VDB != -1 and VDB < 0.05:
+                    if VDB != -1 and VDB < 0.0001:
                         filtered = 1
-                    if RPB != -1 and RPB < 0.05:
-                        filtered = 1
-                    if MQSB != -1 and MQSB < 0.05:
-                        filtered = 1
-                    if DP4 != -1:
-                        if DP4ref == 0:
-                            if DP4alt >= 5:
-                                pass
-                            else:
-                                filtered = 1
-                        else:
-                            if DP4ref >= 5 and DP4alt >= 5:
-                                pass
-                            else:
-                                filtered = 1
+                    #if RPB != -1 and RPB < 0.05:
+                    #    filtered = 1
+                    #if MQSB != -1 and MQSB < 0.05:
+                    #    filtered = 1
+                    #if DP4 != -1:
+                    #    if DP4ref == 0:
+                    #        if DP4alt >= 5:
+                    #            pass
+                    #        else:
+                    #            filtered = 1
+                    #    else:
+                    #        if DP4ref >= 5 and DP4alt >= 5:
+                    #            pass
+                    #        else:
+                    #            filtered = 1
                 if not filtered:
                     ouFile.write(line + '\n')
                 
