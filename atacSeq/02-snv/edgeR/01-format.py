@@ -1,0 +1,11 @@
+inFile = open('5a5b-Allele-Count')
+ouFile = open('5a5b-Allele-Masked-Count', 'w')
+head = inFile.readline().strip().split('\t')
+ouFile.write('\t'.join(['', head[6], head[7], head[10], head[11]]) + '\n')
+for line in inFile:
+    line = line.strip()
+    fields = line.split('\t')
+    k = '_'.join(fields[0:4])
+    ouFile.write('\t'.join([k, fields[6], fields[7], fields[10], fields[11]]) + '\n')
+inFile.close()
+ouFile.close()
