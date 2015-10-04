@@ -1,0 +1,11 @@
+nohup sh Mock-rep1.sh >nohup1 2>&1 &
+nohup sh Mock-rep2.sh >nohup2 2>&1 &
+nohup sh RSV_M0.1-rep1.sec.sh >nohup3 2>&1 &
+nohup sh RSV_M0.1-rep1.sh >nohup4 2>&1 &
+nohup sh RSV_M0.1-rep2.sh >nohup5 2>&1 &
+nohup sh RSV_M3-rep1.sh >nohup6 2>&1 &
+nohup sh RSV_M3-rep2.sh >nohup7 2>&1 &
+nohup sh delNS1_M0.1-rep1.sh >nohup8 2>&1 &
+nohup sh delNS1_M0.1-rep2.sh >nohup9 2>&1 &
+nohup sh delNS1_M3-rep1.sh >nohup10 2>&1 &
+nohup sh delNS1_M3-rep2.sh >nohup11 2>&1 &
