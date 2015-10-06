@@ -1,0 +1,10 @@
+annotate_variation.pl -buildver hg38 Mock-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 Mock-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 RSV_M0.1-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 RSV_M0.1-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 RSV_M3-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 RSV_M3-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 delNS1_M0.1-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 delNS1_M0.1-rep2.flt.anno humandb
+annotate_variation.pl -buildver hg38 delNS1_M3-rep1.flt.anno humandb
+annotate_variation.pl -buildver hg38 delNS1_M3-rep2.flt.anno humandb
