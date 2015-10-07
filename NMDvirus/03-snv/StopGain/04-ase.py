@@ -54,12 +54,14 @@ def num(inF, inF2):
 #num('HSV-Stopgain-SNV-het' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HSV1')
 #num('KHSV-Stopgain-SNV-het' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/KHSV')
 #num('WNV-Stopgain-SNV-het' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/WNV')
+num('RSV2-Stopgain-SNV-het', '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/RSV.2')
+num('RSV2-Stopgain-SNV-hom', '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/RSV.2')
 
-num('RSV-Stopgain-SNV-hom', '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/RSV')
-num('HCV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HCV')
-num('HIV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HIV1')
-num('HSV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HSV1')
-num('KHSV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/KHSV')
-num('WNV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/WNV')
+#num('RSV-Stopgain-SNV-hom', '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/RSV')
+#num('HCV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HCV')
+#num('HIV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HIV1')
+#num('HSV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/HSV1')
+#num('KHSV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/KHSV')
+#num('WNV-Stopgain-SNV-hom' , '/mnt/larsix/projects/NMD/hansun/NMDvirus/03-snv/WNV')
 
 
