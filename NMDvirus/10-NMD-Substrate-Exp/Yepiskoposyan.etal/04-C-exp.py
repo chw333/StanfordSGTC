@@ -42,7 +42,7 @@ def exp(inF1,inF2):
             ouFile.write(g + '\t' + str(D[g][0][0]) + '\t' + str(D[g][0][1]) + '\n')
     ouFile.close()
 
-exp('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal', '/mnt/larsix/projects/NMD/hansun/NMDvirus/05-DESeq/HSV/geneCounts-HSV8h-Normalized.txt')
+exp('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal2', '/mnt/larsix/projects/NMD/hansun/NMDvirus/05-DESeq/HSV/geneCounts-HSV8h-Normalized.txt')
 
 def plot(inF, ouF):
     df = pd.read_table(inF)
@@ -56,13 +56,13 @@ def plot(inF, ouF):
     p.set_xlim(2,14)
     p.set_ylim(2,14)
     p.set_xlabel('HSV-1')
-    p.text(8, 13, 'p-value = 0.42', va='center', ha='center', fontsize=14, color='r')
+    p.text(8, 13, 'p-value = 0.31', va='center', ha='center', fontsize=14, color='r')
     p.plot([2,14],[2,14])
     plt.title('NMD substrates normalized expression (log2)')
     plt.savefig(ouF)
 
 
-plot('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal.exp', 'HSV-NMD-Substrates-UPF1SMG6SMG7-KnockDown.pdf')
+plot('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal2.exp', 'HSV-NMD-Substrates-UPF1SMG6SMG7-KnockDown.pdf')
 
 
 

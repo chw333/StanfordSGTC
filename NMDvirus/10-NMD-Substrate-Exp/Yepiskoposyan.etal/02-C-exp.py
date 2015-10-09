@@ -42,7 +42,7 @@ def exp(inF1,inF2):
             ouFile.write(g + '\t' + str(D[g][0][0]) + '\t' + str(D[g][0][1]) + '\n')
     ouFile.close()
 
-exp('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal', '/mnt/larsix/projects/NMD/hansun/NMDvirus/05-DESeq/HCV/geneCounts-Normalized.txt')
+exp('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal2', '/mnt/larsix/projects/NMD/hansun/NMDvirus/05-DESeq/HCV/geneCounts-Normalized.txt')
 
 def plot(inF, ouF):
     df = pd.read_table(inF)
@@ -55,7 +55,7 @@ def plot(inF, ouF):
     #ax.set_xlim(2,14)
     #ax.set_ylim(2,14)
     p = dfx.plot(kind='scatter', x='HCV', y='Mock', color='blue',edgecolor='blue', ax=ax)
-    p.text(8, 13, 'p-value = 3.20e-08', va='center', ha='center', fontsize=14, color='r')
+    p.text(8, 13, 'p-value = 2.61e-15', va='center', ha='center', fontsize=14, color='r')
     p.set_xlim(2,14)
     p.set_ylim(2,14)
     p.plot([2,14],[2,14])
@@ -63,7 +63,7 @@ def plot(inF, ouF):
     plt.savefig(ouF)
 
 
-plot('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal.exp', 'HCV-NMD-Substrates-UPF1SMG6SMG7-KnockDown.pdf')
+plot('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal2.exp', 'HCV-NMD-Substrates-UPF1SMG6SMG7-KnockDown.pdf')
 
 
 

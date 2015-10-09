@@ -42,7 +42,7 @@ def exp(inF1,inF2):
             ouFile.write(g + '\t' + str(D[g][0][0]) + '\t' + str(D[g][0][1]) + '\n')
     ouFile.close()
 
-exp('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal', 'geneCounts-RSV_M3-Normalized.txt')
+exp('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal2', 'geneCounts-RSV_M3-Normalized.txt')
 
 def plot(inF, ouF):
     df = pd.read_table(inF)
@@ -57,13 +57,13 @@ def plot(inF, ouF):
     p = dfx.plot(kind='scatter', x='RSV', y='Mock', color='blue',edgecolor='blue', ax=ax)
     p.set_xlim(2,14)
     p.set_ylim(2,14)
-    p.text(8, 13, 'p-value = 2.42e-07', va='center', ha='center', fontsize=14, color='r')
+    p.text(8, 13, 'p-value < 2.2e-16', va='center', ha='center', fontsize=14, color='r')
     p.plot([2,14],[2,14])
     plt.title('NMD substrates normalized expression (log2)')
     plt.savefig(ouF)
 
 
-plot('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal.exp', 'RSV-NMD-Substrates-UPF1SMG6SMG7-KnockDown.pdf')
+plot('UPF1SMG6SMG7-KnockDown-UP-Yepiskoposyan.etal2.exp', 'RSV-NMD-Substrates-UPF1SMG6SMG7-KnockDown.pdf')
 
 
 
