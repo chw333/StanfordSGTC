@@ -41,11 +41,20 @@ count('Mock-rep2.bam.Count')
 count('RSV_M3-rep1.bam.Count')
 count('RSV_M3-rep2.bam.Count')
 
-ouFile = open('test', 'w')
+G = {}
+inFile = open('RSV2-Stopgain-SNV')
+for line in inFile:
+    line = line.strip()
+    fields = line.split('\t')
+    G[fields[4] + '\t' + fields[5]] = fields[1]
+inFile.close()
+
+
+ouFile = open('RSV2-Stopgain-SNV-ReadCount', 'w')
 for k in L:
     V = []
     for s in S:
         V.append(str(D[s].get(k, -1)))
-    ouFile.write(k + '\t' + '\t'.join(V) + '\n')
+    ouFile.write(G[k] + '\t' + k + '\t' + '\t'.join(V) + '\n')
         
 ouFile.close()
