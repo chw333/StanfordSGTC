@@ -3,6 +3,7 @@ matplotlib.use('Agg')
 import numpy as np
 import pandas as pd
 import pylab as plt
+from scipy import stats
 
 fig = plt.figure()
 df = pd.read_table('5a5b-Allele-Count')
@@ -21,6 +22,8 @@ ax.set_xlim(0, xym)
 ax.set_ylim(0, xym)
 ax.plot([0,xym],[0, xym])
 ax.set_title('Allele specific reads number(log2), p-value < 2.2e-16')
+pv = stats.ttest_rel(dfx.unMask_REF_5a, dfx.unMask_ALT_5a)
+print(pv[1])
 
 plt.savefig('Scatter-unMask5a.pdf')
 
@@ -37,6 +40,10 @@ xym = 11
 ax.set_xlim(0, xym)
 ax.set_ylim(0, xym)
 ax.plot([0,xym],[0, xym])
+
+pv = stats.ttest_rel(dfx.Mask_REF_5a, dfx.Mask_ALT_5a)
+print(pv[1])
+
 ax.set_title('Allele specific reads number(log2), p-value = 0.38')
 plt.savefig('Scatter-Mask5a.pdf')
 
