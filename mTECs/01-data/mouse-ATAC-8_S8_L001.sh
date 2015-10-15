@@ -1,0 +1,1 @@
+bwa mem -t 8 /mnt/larsix/projects/NMD/hansun/Data/Ensembl/Mouse/MouseGenome mouse-ATAC-8_S8_L001_R1_001.fastq mouse-ATAC-8_S8_L001_R2_001.fastq |samtools view -q 30 -b - | samtools sort -O bam -T mouse-ATAC-8_S8_L001.tmp -o mouse-ATAC-8_S8_L001.bam -

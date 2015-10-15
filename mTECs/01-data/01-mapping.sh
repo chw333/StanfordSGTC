@@ -1,0 +1,16 @@
+mouse-ATAC-10_S2_L001.sh
+mouse-ATAC-10_S2_L002.sh
+mouse-ATAC-3_S5_L001.sh
+mouse-ATAC-3_S5_L002.sh
+mouse-ATAC-4_S6_L001.sh
+mouse-ATAC-4_S6_L002.sh
+mouse-ATAC-5_S3_L001.sh
+mouse-ATAC-5_S3_L002.sh
+mouse-ATAC-6_S4_L001.sh
+mouse-ATAC-6_S4_L002.sh
+mouse-ATAC-7_S7_L001.sh
+mouse-ATAC-7_S7_L002.sh
+mouse-ATAC-8_S8_L001.sh
+mouse-ATAC-8_S8_L002.sh
+mouse-ATAC-9_S1_L001.sh
+mouse-ATAC-9_S1_L002.sh
