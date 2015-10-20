@@ -1,0 +1,1 @@
+tophat2 -G /home/wuwei5///projects/referenceSequences_SGTC//mouse/Mus_musculus/Mus_musculus.GRCm38.79.gtf -p 5 -o lane1 /home/wuwei5///projects/referenceSequences_SGTC//mouse/Mus_musculus/bowtie2/mouse /home/wuwei5//projects/mtec/2015-09-29/data//sequences/mouse-ATAC-9_S1_L001_R1_001.fastq /home/wuwei5//projects/mtec/2015-09-29/data//sequences/mouse-ATAC-9_S1_L001_R2_001.fastq
