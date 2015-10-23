@@ -1,7 +1,7 @@
-Sample = ['Tspan8_negative_MHCII_high_rep1.Cov','Tspan8_negative_MHCII_high_rep2.Cov','Tspan8_negative_MHCII_low_rep1.Cov','Tspan8_negative_MHCII_low_rep2.Cov']
+#Sample = ['Tspan8_negative_MHCII_high_rep1.Cov','Tspan8_negative_MHCII_high_rep2.Cov','Tspan8_negative_MHCII_low_rep1.Cov','Tspan8_negative_MHCII_low_rep2.Cov']
 #Sample = ['Tspan8_positive_MHCII_high_rep1.Cov','Tspan8_positive_MHCII_high_rep2.Cov','Tspan8_positive_MHCII_low_rep1.Cov','Tspan8_positive_MHCII_low_rep2.Cov']
 #Sample = ['Tspan8_positive_MHCII_high_rep1.Cov','Tspan8_positive_MHCII_high_rep2.Cov','Tspan8_negative_MHCII_high_rep1.Cov','Tspan8_negative_MHCII_high_rep2.Cov']
-#Sample = ['Tspan8_positive_MHCII_low_rep1.Cov','Tspan8_positive_MHCII_low_rep2.Cov','Tspan8_negative_MHCII_low_rep1.Cov','Tspan8_negative_MHCII_low_rep2.Cov']
+Sample = ['Tspan8_positive_MHCII_low_rep1.Cov','Tspan8_positive_MHCII_low_rep2.Cov','Tspan8_negative_MHCII_low_rep1.Cov','Tspan8_negative_MHCII_low_rep2.Cov']
 
 
 RegionLen = 100
@@ -52,12 +52,11 @@ def read_data(Sample):
                     D[k][isa] = num
             except:
                 pass
-
         inFile.close()
 
 D, L, CH_LEN= data_structure('Mouse-Chr-Length')
 read_data(Sample)
-ouFile = open('Tspan8_negative_MHCII_HighLow', 'w')
+ouFile = open('MHCII_low_Tspan8_PositiveNegative', 'w')
 ouFile.write('Region' + '\t' + '\t'.join([x.split('.Cov')[0] for x in Sample]) + '\n')
 for k in L:
     ouFile.write(k + '\t' + '\t'.join([str(x) for x in D[k]]) + '\n')

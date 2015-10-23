@@ -1,6 +1,10 @@
+RegionLen = 1000
 def mkbed(ch, start, end, ouFile):
-    for x in range(start, end + 1):
-        ouFile.write(ch + '\t' + str(x) + '\t' + str(x) + '\n')
+    for x in range(start, end + 1, RegionLen):
+        if x + RegionLen <= end:
+            ouFile.write(ch + '\t' + str(x) + '\t' + str(x + RegionLen - 1) + '\n')
+        else:
+            ouFile.write(ch + '\t' + str(x) + '\t' + str(end) + '\n')
 
 def chrLen(inF):
     D = {}
