@@ -10,9 +10,10 @@ for F in Sample:
         fields = line.split('\t')
         ch = fields[0]
         ch_num = int(fields[2])
+        rt = total_num/50000000.0
         if ch in CH:
             total_num += ch_num
-    ouFile.write(F.split('_HQ.bam')[0] + '\t' + str(total_num) + '\n')
+    ouFile.write(F.split('_HQ.bam')[0] + '\t' + str(total_num) + '\t' + '%.4f'%rt + '\n')
 ouFile.close()
     
     

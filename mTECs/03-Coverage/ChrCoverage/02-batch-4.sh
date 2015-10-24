@@ -1,8 +1,8 @@
-sh mTECs-Cov-chr15.sh
-sh mTECs-Cov-chr16.sh
-sh mTECs-Cov-chr17.sh
-sh mTECs-Cov-chr18.sh
-sh mTECs-Cov-chr19.sh
-sh mTECs-Cov-chrMT.sh
-sh mTECs-Cov-chrX.sh
-sh mTECs-Cov-chrY.sh
+sh mTECs-Cov-chr15_300.sh
+sh mTECs-Cov-chr16_300.sh
+sh mTECs-Cov-chr17_300.sh
+sh mTECs-Cov-chr18_300.sh
+sh mTECs-Cov-chr19_300.sh
+sh mTECs-Cov-chrMT_300.sh
+sh mTECs-Cov-chrX_300.sh
+sh mTECs-Cov-chrY_300.sh

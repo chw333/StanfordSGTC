@@ -1,4 +1,4 @@
-RegionLen = 1000
+RegionLen = 300
 def mkbed(ch, start, end, ouFile):
     for x in range(start, end + 1, RegionLen):
         if x + RegionLen <= end:
@@ -23,7 +23,7 @@ def chrLen(inF):
 CH = [str(x) for x in range(1, 20)] + ['X','Y','MT']
 cl = chrLen('/mnt/larsix/projects/NMD/hansun/Data/Ensembl/Mouse/Mus_musculus.GRCm38.dna.toplevel.fa.fa')
 for ch in CH:
-    ouFile = open('MouseRef-'+'chr'+ ch + '.bed', 'w')
+    ouFile = open('MouseRef-'+'chr'+ ch +'_'+ str(RegionLen) + '.bed', 'w')
     mkbed(ch, 1, cl[ch], ouFile)
     ouFile.close()
 
