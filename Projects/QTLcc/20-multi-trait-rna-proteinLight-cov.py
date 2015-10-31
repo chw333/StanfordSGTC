@@ -86,6 +86,24 @@ def manhattonPlot(p_ID, pvalues, ouFprefix):
     pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
     pl.close('all')
 
+def manhattonPlotSpecific(p_ID, pvalues, ouFprefix):
+    pl.figure(figsize=[12,4])
+    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues['specific'].values,chromBounds=chromBounds,thr_plotting=0.05)
+    pl.title(p_ID)
+    pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
+    pl.close('all')
+
+    pl.figure(figsize=[12,4])
+    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues['alternative_any'], chromBounds=chromBounds,colorS='k',colorNS='k',alphaNS=0.05,labelS='any')
+    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues['null_common'], chromBounds=chromBounds,colorS='y',colorNS='y',alphaNS=0.05,labelS='common')
+    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues['specific'], chromBounds=chromBounds,colorS='r',colorNS='r',alphaNS=0.05,labelS='specific')
+    pl.title(p_ID)
+    pl.legend(loc='upper right')
+    pl.savefig(ouFprefix + '.AnyCommSpec.' + p_ID + '.pdf')
+    pl.close('all')
+
+
+
 
 def any_effect(ouF):
     S = []
@@ -206,8 +224,10 @@ def specific_effect(ouF):
     S = []
     ALL = []
     ouFile = open(ouF, 'w')
+    ouFile.write('\t'.join(['Marker','Chr','Position','Specific_pvalue','Common_pvalue','Any_pvalue','Specific_qvalue','Common_qvalue','Any_qvalue','Gene']) + '\n')
     ###ouFile2 = open(ouF.split('-Sig')[0] + '-ALL', 'w')
     gs = G[0]
+    #gs = G[0][80:81]
     for gene in gs:
         phenotype_names = [gene + ':RNA', gene + ':ProteinLight']
         phenotype_query = "(phenotype_ID in %s)" %  str(phenotype_names)
@@ -254,8 +274,8 @@ def specific_effect(ouF):
                 #print(pvalues)
                 #ouFile.write('\t'.join([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene]) + '\n')
                 S.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]), str(pvalues.ix[n][1]), str(pvalues.ix[n][2]), str(qvalues1[n]), str(qvalues2[n]), str(qvalues3[n]),gene])
-        ####if flag:
-        ####    manhattonPlot(gene, pvalues,ouF)
+        if flag:
+            manhattonPlotSpecific(gene, pvalues,ouF)
     S.sort(cmp = lambda x,y:cmp(float(x[6]),float(y[6])))
     for item in S:
         ouFile.write('\t'.join(item) + '\n')
@@ -270,5 +290,5 @@ def specific_effect(ouF):
 #common_effect('Yeast-RNA-ProteinLight-CommonEffect-Sig-Cov')
 
 #any_effect('Yeast-RNA-ProteinLight-AnyEffect-Sig-Cov')
-specific_effect('Yeast-RNA-ProteinLight-AnyEffect-Sig-Cov')
+specific_effect('Yeast-RNA-ProteinLight-SpecificEffect-Sig-Cov')
 
