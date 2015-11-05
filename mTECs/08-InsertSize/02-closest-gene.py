@@ -25,6 +25,7 @@ def closest_gene(inF):
         fields = line.split('\t')
         ch = fields[1]
         pos = fields[2]
+        D.setdefault(ch, [])
         D[ch].append(line)
     inFile.close()
     for k in D:
@@ -35,21 +36,25 @@ def closest_gene(inF):
     for line in inFile:
         line = line.strip()
         ch = line.split('\t')[1]
-        ind = D[ch].index(line)
-        for i in range(ind-1,0,-1):
-            if D[ch][i].find('ENSMUSG') == 0:
-                left = int(line.split('\t')[2]) - int(D[ch][i].split('\t')[2])
-                iL = i
-                break
-        for i in range(ind+1,len(D[ch])):
-            if D[ch][i].find('ENSMUSG') == 0: 
-                right = int(D[ch][i].split('\t')[2]) - int(line.split('\t')[2]) 
-                iR = i
-                break
-        if left < right:
-            ouFile.write(line + '\t' + str(left)+'\t' + D[ch][iL] + '\n')
-        else:
-            ouFile.write(line + '\t' + str(right) + '\t' + D[ch][iR] + '\n')
+        if ch in D:
+            ind = D[ch].index(line)
+            iL = -1
+            iR = -1
+            for i in range(ind-1,0,-1):
+                if D[ch][i].find('ENSMUSG') == 0:
+                    left = int(line.split('\t')[2]) - int(D[ch][i].split('\t')[2])
+                    iL = i
+                    break
+            for i in range(ind+1,len(D[ch])):
+                if D[ch][i].find('ENSMUSG') == 0: 
+                    right = int(D[ch][i].split('\t')[2]) - int(line.split('\t')[2]) 
+                    iR = i
+                    break
+            if iL != -1 and iR != -1:
+                if left < right:
+                    ouFile.write(line + '\t' + str(left)+'\t' + D[ch][iL] + '\n')
+                else:
+                    ouFile.write(line + '\t' + str(right) + '\t' + D[ch][iR] + '\n')
 
     inFile.close()
     ouFile.close()
