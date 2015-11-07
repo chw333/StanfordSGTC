@@ -12,8 +12,8 @@ heatpairs(mat.norm)
 dev.off()
 
 
-#wh = apply(mat.norm, 1, function(x){any(x < 5)})
-wh = apply(mat.norm, 1, function(x){any(x == 0)})
+wh = apply(mat.norm, 1, function(x){any(x < 5)})
+##wh = apply(mat.norm, 1, function(x){any(x == 0)})
 mat.norm.flt = mat.norm[!wh,]
 
 pdf('mTECs-Promoter-Cor-log2.pdf')
