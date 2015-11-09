@@ -15,7 +15,7 @@ for feature in gtffile:
         if feature.iv.chrom in CH:
             tsspos.add( feature.iv.start_d_as_pos )
 
-Fs = os.list('.')
+Fs = os.listdir('.')
 for F in Fs:
     if F[-4:] == '.bam':
 
