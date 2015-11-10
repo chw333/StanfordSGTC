@@ -1,5 +1,5 @@
 ### one additional column, gene type
-RegionLen = 1000
+RegionLen = 500
 inFile = open('Mouse_Gene_Annotation.txt')
 ouFile = open('Mouse_Gene_Promoter.bed', 'w')
 CH = [str(x) for x in range(1, 20)] + ['X', 'Y']
@@ -17,10 +17,10 @@ for line in inFile:
     if ch in CH:
         if strand == '1':
             promoter_start =  start - RegionLen
-            promoter_end = start - 1
+            promoter_end = start + RegionLen - 1
         elif strand == '-1':
-            promoter_start =  end + 1
-            promoter_end = end + RegionLen
+            promoter_start = end - RegionLen
+            promoter_end = end + RegionLen - 1
         L.append([ch, str(promoter_start), str(promoter_end), gene])
 L.sort(cmp = lambda x,y:cmp(CH.index(x[0]), CH.index(y[0])))
 for item in L:

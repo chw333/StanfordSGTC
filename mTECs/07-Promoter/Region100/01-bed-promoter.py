@@ -1,5 +1,5 @@
 ### one additional column, gene type
-RegionLen = 1000
+RegionLen = 100
 inFile = open('Mouse_Gene_Annotation.txt')
 ouFile = open('Mouse_Gene_Promoter.bed', 'w')
 CH = [str(x) for x in range(1, 20)] + ['X', 'Y']
