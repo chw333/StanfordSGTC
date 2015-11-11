@@ -1,0 +1,8 @@
+samtools index Tspan8_negative_MHCII_high_rep1_HQ_RD.bam
+samtools index Tspan8_negative_MHCII_high_rep2_HQ_RD.bam
+samtools index Tspan8_negative_MHCII_low_rep1_HQ_RD.bam
+samtools index Tspan8_negative_MHCII_low_rep2_HQ_RD.bam
+samtools index Tspan8_positive_MHCII_high_rep1_HQ_RD.bam
+samtools index Tspan8_positive_MHCII_high_rep2_HQ_RD.bam
+samtools index Tspan8_positive_MHCII_low_rep1_HQ_RD.bam
+samtools index Tspan8_positive_MHCII_low_rep2_HQ_RD.bam
