@@ -26,7 +26,8 @@ for line in inFile:
         L.append([ch, str(promoter_start), str(promoter_end), strand, gene])
 L.sort(cmp = lambda x,y:cmp(CH.index(x[0]), CH.index(y[0])))
 for item in L:
-    ouFile.write('\t'.join([item[0], 'FakeGene', 'exon', item[1], item[2], '.', item[3], '0', 'gene_id "%s";'%(item[4]+'_'+item[1]+'_'+item[2])]) + '\n')
+    ouFile.write('\t'.join([item[0], 'FakeGene', 'exon', item[1], item[2], '.', item[3], '0', 'gene_id "%s";'%(item[4]+'_'+item[0]+'_'+item[1]+'_'+item[2])]) + '\n')
+
     
     
         

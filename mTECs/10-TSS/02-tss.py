@@ -17,7 +17,7 @@ for feature in gtffile:
 
 Fs = os.listdir('.')
 for F in Fs:
-    if F[-7:] == '_HQ.bam':
+    if F[-7:] == '_NF.bam':
 
         bamfile = HTSeq.BAM_Reader(F)
         halfwinwidth = 1000
@@ -51,7 +51,7 @@ for F in Fs:
                 else:
                     profile += wincvg[::-1]
                 
-        ouFile = open(F.split('_HQ.bam')[0] + '.num', 'w')
+        ouFile = open(F.split('_NF.bam')[0] + '.NF.num', 'w')
         for x in profile:
             ouFile.write(str(x) + '\n')
         ouFile.close()
@@ -61,5 +61,5 @@ for F in Fs:
         ax.plot( numpy.arange( -halfwinwidth, halfwinwidth ), profile )
         ax.set_xlabel('Distance to TSS (bp)')
         ax.set_ylabel('Number of reads')
-        plt.savefig(F.split('_HQ.bam')[0] + '.TSS.pdf')
+        plt.savefig(F.split('_NF.bam')[0] + '.NF.TSS.pdf')
 
