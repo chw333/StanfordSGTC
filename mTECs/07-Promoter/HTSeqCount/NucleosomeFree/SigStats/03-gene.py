@@ -26,6 +26,6 @@ def gene2(inF):
     inFile.close()
     ouFile.close()
 
-#gene('MHCII_low_Tspan8_PositiveNegative_sig.txt')
-#gene('Tspan8_negative_MHCII_HighLow_sig.txt')
+gene('MHCII_low_Tspan8_PositiveNegative_sig.txt')
+gene('Tspan8_negative_MHCII_HighLow_sig.txt')
 gene2('Mouse_Gene_Promoter_Cov')
