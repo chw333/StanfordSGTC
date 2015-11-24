@@ -1,6 +1,6 @@
 ####GATK=/g/steinmetz/hsun/MySoft/GATK/GenomeAnalysisTK.jar
-REF=/g/steinmetz/hsun/Stanford3/K562/00-reference/Homo_sapiens.GRCh37
-SAMTOOLS=/g/steinmetz/hsun/MySoft/samtools/samtools-1.2/samtools
+REF=/mnt/larsix/projects/NMD/hansun/Data/Ensembl/bwa/Homo_sapiens.GRCh37
+SAMTOOLS=/mnt/larsix/projects/NMD/hansun/MySoft/samtools/samtools-1.2/samtools
 
 bwa mem -M -t 8 -R '@RG\tID:group1\tSM:WT' $REF H2LM7BBXX_k562_WT_15s014311-1-2_Mueller_lane115s014311_1_sequence.txt.gz H2LM7BBXX_k562_WT_15s014311-1-2_Mueller_lane115s014311_2_sequence.txt.gz   |$SAMTOOLS view -q 30 -b - | $SAMTOOLS sort -O bam -T K562_WT.tmp -o K562_WT.bam -
 
