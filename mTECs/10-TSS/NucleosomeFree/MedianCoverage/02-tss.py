@@ -50,7 +50,7 @@ for F in Fs:
                 if p.strand == "+":
                     #profile += wincvg
                     for x in range(len(wincvg)):
-                        profile[x].apppend(wincvg[x])
+                        profile[x].append(wincvg[x])
                 else:
                     #profile += wincvg[::-1]
                     wincvg2 = wincvg[::-1]
