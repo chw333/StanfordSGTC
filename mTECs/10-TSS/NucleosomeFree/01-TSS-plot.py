@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import pylab as plt
 MAX = 2000
 
