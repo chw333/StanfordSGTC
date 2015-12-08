@@ -30,13 +30,14 @@ inFile.close()
 
 
 inFile = open('Mouse_Gene_Promoter_Cov')
-ouFile = open('mTECs_Gene_Promoter_Cov_ProteinCoding', 'w')
+ouFile = open('mTECs_Gene_Promoter_Cov_NonProteinCoding', 'w')
 head = inFile.readline()
+ouFile.write(head)
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
     k = '\t'.join([fields[0], fields[1], fields[2], fields[3]])
-    if D[k] == 'protein_coding':
+    if D[k] != 'protein_coding':
         ouFile.write(line + '\n')
 inFile.close()
 
