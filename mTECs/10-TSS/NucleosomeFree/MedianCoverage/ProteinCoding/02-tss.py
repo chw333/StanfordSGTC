@@ -10,10 +10,23 @@ CH = [str(x) for x in range(1,20)] + ['X', 'Y']
 gtffile = HTSeq.GFF_Reader( "Mus_musculus.GRCm38.82.gtf" )
 
 tsspos = set()
+G = {}
 for feature in gtffile:
     if feature.type == "exon" and feature.attr["exon_number"] == "1" and feature.attr["gene_biotype"] == "protein_coding":
         if feature.iv.chrom in CH:
-            tsspos.add( feature.iv.start_d_as_pos )
+            G.setdefault(feature.name, [])
+            G[feature.name].append(feature.iv.start_d_as_pos)
+            #tsspos.add( feature.iv.start_d_as_pos )
+for g in G:
+    gp = G[g]
+    strand = gp[0].strand
+    if strand == '+':
+        gp.sort(cmp = lambda x,y:cmp(x.start,y.start))
+    else:
+        gp.sort(cmp = lambda x,y:cmp(x.end, y.end), reverse=True)
+    tsspos.add(gp[0])
+
+
 
 Fs = os.listdir('.')
 for F in Fs:
@@ -65,7 +78,9 @@ for F in Fs:
 
         ouFile = open(F.split('_NF.bam')[0] + '.NF.num.median', 'w')
         for x in profile:
-            ouFile.write(str(numpy.percentile(x, 100)) + '\n')
+            #ouFile.write(str(numpy.median(x)) + '\n')
+            #ouFile.write(str(numpy.percentile(x, 100)) + '\n')
+            ouFile.write('\t'.join([str(m) for m in x]) + '\n')
         ouFile.close()
  
         
