@@ -1,7 +1,7 @@
 import subprocess
 CH = [str(x) for x in range(1, 20)] + ['X','Y']
-Sample = ['Tspan8_positive_MHCII_high_rep1_NF.bam','Tspan8_positive_MHCII_high_rep2_NF.bam','Tspan8_negative_MHCII_high_rep1_NF.bam','Tspan8_negative_MHCII_high_rep2_NF.bam','Tspan8_positive_MHCII_low_rep1_NF.bam','Tspan8_positive_MHCII_low_rep2_NF.bam','Tspan8_negative_MHCII_low_rep1_NF.bam','Tspan8_negative_MHCII_low_rep2_NF.bam']
-ouFile = open('mTECs-Sample-LibrarySize', 'w')
+Sample = ['Tspan8_negative_MHCII_high_rep1_HQ_RD.bam', 'Tspan8_negative_MHCII_high_rep2_HQ_RD.bam', 'Tspan8_negative_MHCII_low_rep1_HQ_RD.bam', 'Tspan8_negative_MHCII_low_rep2_HQ_RD.bam', 'Tspan8_positive_MHCII_high_rep1_HQ_RD.bam', 'Tspan8_positive_MHCII_high_rep2_HQ_RD.bam', 'Tspan8_positive_MHCII_low_rep1_HQ_RD.bam', 'Tspan8_positive_MHCII_low_rep2_HQ_RD.bam', 'Tspan8_negative_MHCII_high_rep1_NF.bam', 'Tspan8_negative_MHCII_high_rep2_NF.bam', 'Tspan8_negative_MHCII_low_rep1_NF.bam', 'Tspan8_negative_MHCII_low_rep2_NF.bam', 'Tspan8_positive_MHCII_high_rep1_NF.bam', 'Tspan8_positive_MHCII_high_rep2_NF.bam', 'Tspan8_positive_MHCII_low_rep1_NF.bam', 'Tspan8_positive_MHCII_low_rep2_NF.bam']
+ouFile = open('mTECs-Sample-LibrarySize-All', 'w')
 for F in Sample:
     p = subprocess.Popen(['samtools','idxstats',F], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     total_num = 0
@@ -13,7 +13,8 @@ for F in Sample:
         rt = total_num/20000000.0
         if ch in CH:
             total_num += ch_num
-    ouFile.write(F.split('_NF.bam')[0] + '\t' + str(total_num) + '\t' + '%.4f'%rt + '\n')
+    #ouFile.write(F.split('.bam')[0] + '\t' + str(total_num) + '\t' + '%.4f'%rt + '\n')
+    ouFile.write(F.split('.bam')[0] + '\t' + str(total_num) + '\n')
 ouFile.close()
     
     
