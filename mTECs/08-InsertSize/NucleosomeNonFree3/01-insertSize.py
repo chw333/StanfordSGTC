@@ -12,13 +12,8 @@ for F in Fs:
                 ouFile.write(line)
             else:
                 fields = line.split('\t')
-                if 0 < int(fields[8]) < 100:
-                    TLEN = int(fields[8])
-                    cigar = str(TLEN) + 'M'
-                    seq = 'N'*TLEN
-                    seqQ = 'B'*TLEN
-                    
-                    ouFile.write('\t'.join(fields[0:5] + [cigar] + fields[6:9] + [seq, seqQ] + fields[11:]))
+                if  int(fields[8]) > 180 or int(fields[8]) < -180:
+                    ouFile.write(line)
         ouFile.close()
-        p = subprocess.call(['samtools','view', '-b', ouF_Name, '-o', ouF_Name.split('_HQ60_RD.sam')[0]+'_NF.bam'])
+        p = subprocess.call(['samtools','view', '-b', ouF_Name, '-o', ouF_Name.split('_HQ_RD.sam')[0]+'_NS3.bam'])
         os.remove(ouF_Name)

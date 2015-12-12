@@ -1,4 +1,4 @@
-def combine(inF1, inF2):
+def combine(inF1, inF2, ouF):
     D = {}
     inFile = open(inF1)
     head1 = inFile.readline().strip()
@@ -8,7 +8,7 @@ def combine(inF1, inF2):
         D[fields[0]] = '\t'.join(['%.2f'%float(x) for x in fields[1:]])
     inFile.close()
     inFile = open(inF2)
-    ouFile = open(inF2.split('.txt')[0] + '_exp', 'w')
+    ouFile = open(ouF, 'w')
     head2 = inFile.readline().strip()
     ouFile.write('Gene\t' + head2 + '\t' + head1 + '\n')
     for line in inFile:
@@ -18,4 +18,5 @@ def combine(inF1, inF2):
     inFile.close()
     ouFile.close()
 
-combine('Tspan8_Negative_MHCII_Low_vs_Other-Counts-Normalized.txt', 'Tspan8_Negative_MHCII_Low_vs_Other_sig.txt')
+combine('Tspan8_Negative_MHCII_Low_vs_Other-Counts-Normalized.txt', 'Tspan8_Negative_MHCII_Low_vs_Other_sig.txt', 'Tspan8_Negative_MHCII_Low_vs_Other_sig.exp')
+combine('Tspan8_Negative_MHCII_Low_vs_Other-Counts-raw.txt', 'Tspan8_Negative_MHCII_Low_vs_Other_sig.txt', 'Tspan8_Negative_MHCII_Low_vs_Other_sig.raw.exp')
