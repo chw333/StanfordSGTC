@@ -1,0 +1,6 @@
+samtools index Excitatory_Neurons_rep1_NF.bam
+samtools index Excitatory_Neurons_rep2_NF.bam
+samtools index PV_Neurons_rep1_NF.bam
+samtools index PV_Neurons_rep2_NF.bam
+samtools index VIP_Neurons_rep1_NF.bam
+samtools index VIP_Neurons_rep2_NF.bam

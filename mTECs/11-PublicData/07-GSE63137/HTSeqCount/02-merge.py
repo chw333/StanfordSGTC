@@ -1,5 +1,5 @@
-Sample = ['SRR1930167_NF2.count', 'SRR1930169_NF2.count', 'SRR1930171_NF2.count', 'SRR1930173_NF2.count']
-Sample2 = ['EmbryonicFibroblastst','NeuralStem','InducedPluripotentStem','EmbryonicStem']
+Sample = ['Excitatory_Neurons_rep1_NF.count', 'Excitatory_Neurons_rep2_NF.count', 'PV_Neurons_rep1_NF.count', 'PV_Neurons_rep2_NF.count', 'VIP_Neurons_rep1_NF.count', 'VIP_Neurons_rep2_NF.count']
+Sample2 = ['Excitatory_Neurons_rep1', 'Excitatory_Neurons_rep2', 'PV_Neurons_rep1', 'PV_Neurons_rep2', 'VIP_Neurons_rep1', 'VIP_Neurons_rep2']
 
 D = {}
 for sample in Sample:
@@ -28,6 +28,4 @@ for gene in G:
     ouFile.write('\t'.join([gs[1],gs[2], gs[3], gs[0]]) + '\t' + '\t'.join(L) + '\n')
 
 ouFile.close()
-
-
 
