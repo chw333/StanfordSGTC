@@ -1,9 +1,10 @@
 ANNOVAR_HUMANDB=/mnt/larsix/projects/NMD/hansun/MySoft/ANNOVAR/annovar/humandb
 
 INPUT_VCF=Lars_filtered_snp.vcf
-
-table_annovar.pl $INPUT_VCF $ANNOVAR_HUMANDB -buildver hg19 -out Annot -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2014oct_all,1000g2014oct_afr,1000g2014oct_eas,1000g2014oct_eur,snp138,ljb26_all -operation g,r,r,f,f,f,f,f,f,f -nastring . -vcfinput
+OUT=AnnotSNP
+table_annovar.pl $INPUT_VCF $ANNOVAR_HUMANDB -buildver hg19 -out $OUT -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2014oct_all,1000g2014oct_afr,1000g2014oct_eas,1000g2014oct_eur,snp138,ljb26_all -operation g,r,r,f,f,f,f,f,f,f -nastring . -vcfinput
 
 INPUT_VCF=Lars_filtered_indel.vcf
+OUT=AnnotINDEL
 
-table_annovar.pl $INPUT_VCF $ANNOVAR_HUMANDB -buildver hg19 -out Annot -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2014oct_all,1000g2014oct_afr,1000g2014oct_eas,1000g2014oct_eur,snp138,ljb26_all -operation g,r,r,f,f,f,f,f,f,f -nastring . -vcfinput
+table_annovar.pl $INPUT_VCF $ANNOVAR_HUMANDB -buildver hg19 -out $OUT -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2014oct_all,1000g2014oct_afr,1000g2014oct_eas,1000g2014oct_eur,snp138,ljb26_all -operation g,r,r,f,f,f,f,f,f,f -nastring . -vcfinput
