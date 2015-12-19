@@ -1,9 +1,9 @@
 def coverage(inF):
-    MIN = 0
+    MIN = 10
     CH = ['chr' + str(x) for x in range(1, 23)] + ['chrX', 'chrY']
     D = {}
     inFile = open(inF)
-    ouFile = open(inF.split('.txt')[0] + '.cov', 'w')
+    ouFile = open(inF.split('.txt')[0] + '.cov'+str(MIN), 'w')
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')
