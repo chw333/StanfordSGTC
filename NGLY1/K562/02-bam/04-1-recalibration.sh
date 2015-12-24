@@ -10,11 +10,11 @@ RECAL_PLOTS=${SAMPLE}.recalibration_plots.pdf
 REALIGNED_BAM=${SAMPLE}_Realigned.bam
 RECALIBRATED_BAM=${SAMPLE}_Recalibrated.bam
 
-java -jar $GATK -T BaseRecalibrator -R $REFERENCE -I $REALIGNED_BAM -knownSites $DBSNP -knownSites $GOLD_INDEL -o $RECAL_DATA_TABLE
+#java -jar $GATK -T BaseRecalibrator -R $REFERENCE -I $REALIGNED_BAM -knownSites $DBSNP -knownSites $GOLD_INDEL -o $RECAL_DATA_TABLE
 
-java -jar $GATK -T BaseRecalibrator -R $REFERENCE -I $REALIGNED_BAM -knownSites $DBSNP -knownSites $GOLD_INDEL -BQSR $RECAL_DATA_TABLE -o $POST_RECAL_DATA_TABLE
+#java -jar $GATK -T BaseRecalibrator -R $REFERENCE -I $REALIGNED_BAM -knownSites $DBSNP -knownSites $GOLD_INDEL -BQSR $RECAL_DATA_TABLE -o $POST_RECAL_DATA_TABLE
 
-java -jar $GATK -T AnalyzeCovariates -R $REFERENCE -before $RECAL_DATA_TABLE -after $POST_RECAL_DATA_TABLE -plots $RECAL_PLOTS
+#java -jar $GATK -T AnalyzeCovariates -R $REFERENCE -before $RECAL_DATA_TABLE -after $POST_RECAL_DATA_TABLE -plots $RECAL_PLOTS
 
 java -jar $GATK -T PrintReads -R $REFERENCE -I $REALIGNED_BAM -BQSR $RECAL_DATA_TABLE -o $RECALIBRATED_BAM
 
