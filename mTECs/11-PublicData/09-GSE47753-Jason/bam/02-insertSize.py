@@ -3,7 +3,7 @@ import subprocess
 
 Fs = os.listdir('.')
 for F in Fs:
-    if F[-4:] == '.bam':
+    if F[-4:] == '.bam' and F.find('NF') == -1:
         ouF_Name = F.split('.bam')[0] + '.sam'
         ouFile = open(ouF_Name, 'w')
         p = subprocess.Popen(['samtools','view', '-h', F], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
