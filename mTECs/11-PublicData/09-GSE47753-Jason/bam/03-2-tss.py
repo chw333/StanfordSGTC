@@ -5,7 +5,7 @@ import numpy
 import pylab as plt
 import os
 
-CH = ['chr'+str(x) for x in range(1,20)] + ['chrX', 'chrY']
+CH = ['chr'+str(x) for x in range(1,23)] + ['chrX', 'chrY']
 
 gtffile = HTSeq.GFF_Reader( "Homo_sapiens.GRCh37.75.gtf" )
 
