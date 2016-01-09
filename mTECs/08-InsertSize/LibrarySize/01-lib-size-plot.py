@@ -5,15 +5,15 @@ import pylab as plt
 import numpy as np
 import pandas as pd
 
-
+PEAK = pd.read_table('mTECs-NF-TSS-Peak', header=None)
 ALL = pd.read_table('mTECs-Sample-LibrarySize-ALL',header=None)
 NF = pd.read_table('mTECs-Sample-LibrarySize-NF',header=None)
 Mono = pd.read_table('mTECs-Sample-LibrarySize-Mono',header=None)
 Di = pd.read_table('mTECs-Sample-LibrarySize-Di',header=None)
 Tri = pd.read_table('mTECs-Sample-LibrarySize-Tri',header=None)
 
-DF = pd.DataFrame([ALL[1], NF[1], Mono[1], Di[1], Tri[1]]).T
-DF.columns=['ALL','NucleosomeFree','MonoNucleosome','DiNucleosomes','TriNucleosomes']
+DF = pd.DataFrame([PEAK[1], ALL[1], NF[1], Mono[1], Di[1], Tri[1]]).T
+DF.columns=['TSS_Peak', 'ALL','NucleosomeFree','MonoNucleosome','DiNucleosomes','TriNucleosomes']
 DF.index=ALL[0]
 DF.index.name=None
 DF2 = np.log2(DF)
