@@ -5,12 +5,12 @@ import pylab as plt
 import numpy as np
 import pandas as pd
 
-PEAK = pd.read_table('mTECs-NF-TSS-Peak', header=None)
-ALL = pd.read_table('mTECs-Sample-LibrarySize-ALL',header=None)
-NF = pd.read_table('mTECs-Sample-LibrarySize-NF',header=None)
-Mono = pd.read_table('mTECs-Sample-LibrarySize-Mono',header=None)
-Di = pd.read_table('mTECs-Sample-LibrarySize-Di',header=None)
-Tri = pd.read_table('mTECs-Sample-LibrarySize-Tri',header=None)
+PEAK = pd.read_table('GM12878-NF-TSS-Peak', header=None)
+ALL = pd.read_table('GM12878-LibrarySize-ALL',header=None)
+NF = pd.read_table('GM12878-LibrarySize-NF',header=None)
+Mono = pd.read_table('GM12878-LibrarySize-Mono',header=None)
+Di = pd.read_table('GM12878-LibrarySize-Di',header=None)
+Tri = pd.read_table('GM12878-LibrarySize-Tri',header=None)
 
 DF = pd.DataFrame([PEAK[1], ALL[1], NF[1], Mono[1], Di[1], Tri[1]]).T
 DF.columns=['TSS_Peak', 'ALL','NucleosomeFree','MonoNucleosome','DiNucleosomes','TriNucleosomes']
@@ -27,7 +27,7 @@ patches, labels = ax.get_legend_handles_labels()
 ax.legend(patches, labels, bbox_to_anchor=(0.5, 1), loc='center', ncol=2)
 ax.set_xticklabels(DF.index, rotation=60, fontsize=6)
 plt.grid(True)
-plt.savefig('mTECs-LibrarySize.pdf')
+plt.savefig('GM12878-LibrarySize.pdf')
 
 print('PEAK/ALL')
 norm = DF.TSS_Peak/DF.ALL

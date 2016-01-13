@@ -1,0 +1,4 @@
+samtools index GM12878_50k_Rep1_Mono.bam
+samtools index GM12878_50k_Rep2_Mono.bam
+samtools index GM12878_50k_Rep3_Mono.bam
+samtools index GM12878_50k_Rep4_Mono.bam
