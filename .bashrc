@@ -17,6 +17,7 @@ alias sh='bash'
 
 export hg19='/mnt/larsix/projects/NMD/hansun/Data/UCSC/ucsc-chr/hg19.fa'
 export hg19g='/mnt/larsix/projects/NMD/hansun/Data/GATK/ucsc.hg19.fasta'
+export ens='/mnt/larsix/projects/NMD/hansun/Data/Ensembl/Homo_sapiens.GRCh37.75.dna.fasta'
 export hg38='/mnt/larsix/projects/NMD/hansun/Data/Ensembl/Homo_sapiens.GRCh38.dna.toplevel.fa'
 export yeast='/mnt/larsix/projects/NMD/hansun/atacSeq/00-data/bwa-index/S288C_reference_sequence_R64-2-1_20150113.fsa.fa'
 export mm='/mnt/larsix/projects/NMD/hansun/Data/Ensembl/Mouse/Mus_musculus.GRCm38.dna.toplevel.fa'
