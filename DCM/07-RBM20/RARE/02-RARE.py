@@ -1,14 +1,17 @@
 import re 
-inFile = open('RBM20.fasta')
+inFile = open('HOXB3.fasta')
 head = inFile.readline()
 seq = inFile.readline().strip()
 inFile.close()
 
-#p1 = 'GGTCA'
-#p2 = 'GGTGA'
+p1 = 'GGTCA'
+p2 = 'GGTGA'
 
-p1 = 'GGTGA'
-p2 = 'GGTCA'
+p1 = 'TGACC'
+p2 = 'TCACC'
+
+
+
 s1 = [x.start() for x in re.finditer(p1, seq)]
 s2 = [x.start() for x in re.finditer(p2, seq)]
 s = list(set(s1 + s2))
