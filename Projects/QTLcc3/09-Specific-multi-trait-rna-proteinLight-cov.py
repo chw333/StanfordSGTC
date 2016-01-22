@@ -87,13 +87,11 @@ def padj(x):
     q = sum([1.0/i for i in xrange(1,len(x)+1)])
     L = [q*len(x)/i*x[j] for i,j in zip(reversed(xrange(1,len(x)+1)),o)]
     L = [L[k] if L[k] < 1.0 else 1.0 for k in ro]
-    return L 
-
-
+    return L
 
 def manhattonPlot(p_ID, pvalues, ouFprefix):
     pl.figure(figsize=[12,4])
-    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues[p_ID].values,chromBounds=chromBounds)
+    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues[p_ID].values,chromBounds=chromBounds,thr_plotting=0.05)
     pl.title(p_ID)
     pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
     pl.close('all')
@@ -115,11 +113,11 @@ def manhattonPlotSpecific(p_ID, pvalues, ouFprefix):
     pl.close('all')
 
 
-
-def any_effect(ouF):
+def specific_effect(ouF):
     S = []
     ALL = []
     ouFile = open(ouF, 'w')
+    ouFile.write('\t'.join(['Marker','Chr','Position','Specific_pvalue','Common_pvalue','Any_pvalue','Specific_qvalue','Common_qvalue','Any_qvalue','Gene']) + '\n')
     ###ouFile2 = open(ouF.split('-Sig')[0] + '-ALL', 'w')
     gs = G[0]
     for gene in gs:
@@ -134,11 +132,16 @@ def any_effect(ouF):
         N, P = phenotypes.shape          
 
         imax = 735
+        ### II:476596
+        #covars_conditional=np.concatenate((geno[sample_idx,imax:imax+1],np.ones((phenotypes_vals_ranks.values.shape[0],1))),1)
         covars_conditional=np.concatenate((geno[sample_idx,imax:imax+1],np.ones((N,1))),1)
 
         covs =  None                #covariates
         Acovs = None                #the design matrix for the covariates   
-        Asnps = sp.eye(P)           #the design matrix for the SNPs
+        Asnps0 = sp.ones((1,P))     #the design matrix for the SNPs
+        Asnps1 = sp.zeros((2,P))
+        Asnps1[0,:] = 1.0
+        Asnps1[1,0] = 1.0
         K1r = sample_relatedness    #the first sample-sample covariance matrix (non-noise)
         K2r = sp.eye(N)             #the second sample-sample covariance matrix (noise)
         K1c = None                  #the first phenotype-phenotype covariance matrix (non-noise)
@@ -146,31 +149,35 @@ def any_effect(ouF):
         covar_type = 'freeform'     #the type of the trait/trait covariance to be estimated 
         searchDelta = False         #specify if delta should be optimized for each SNP
         test="lrt"              
-        lmm, pv = qtl.test_lmm_kronecker(snps,phenotypes_vals_ranks,covs=covs,Acovs=Acovs, Asnps=Asnps,K1r=K1r,trait_covar_type=covar_type)
-        pvalues = pd.DataFrame(data=pv.T,index=data_subsample.geno_ID,columns=[gene])
-        #qvalues = fdr.qvalues(pv[0])
-        qvalues = padj(pv[0])
+        #lmm, pv = qtl.test_lmm_kronecker(snps,phenotypes_vals_ranks,covs=covs,Acovs=Acovs, Asnps=Asnps,K1r=K1r,trait_covar_type=covar_type)
+        pv = qtl.test_interaction_lmm_kronecker(snps=snps,phenos=phenotypes_vals_ranks, covs=covs,Acovs=Acovs,Asnps1=Asnps1,Asnps0=Asnps0,K1r=K1r,K2r=K2r,K1c=K1c,K2c=K2c,trait_covar_type=covar_type,searchDelta=searchDelta)
+
+        #pvalues = pd.DataFrame(data=pv.T,index=data_subsample.geno_ID,columns=[gene])
+        pvalues = pd.DataFrame(data=sp.concatenate(pv).T,index=data_subsample.geno_ID,columns=["specific","null_common","alternative_any"])
         flag = 0
+        qvalues1 = padj(pv[0][0])
+        qvalues2 = padj(pv[1][0])
+        qvalues3 = padj(pv[2][0])
         for n in range(pvalues.shape[0]):
             k = position.ix[n]['chrom']+':'+str(position.ix[n]['pos'])
             ###ALL.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene])
-            #if pvalues.ix[n][0] < SIG:
-            if qvalues[n] < FDR:
+            if qvalues1[n] < FDR:
                 flag = 1
+                #print(pvalues)
                 #ouFile.write('\t'.join([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]),gene]) + '\n')
-                S.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]), str(qvalues[n]),gene])
+                S.append([M[k],position.ix[n]['chrom'],str(position.ix[n]['pos']),str(pvalues.ix[n][0]), str(pvalues.ix[n][1]), str(pvalues.ix[n][2]), str(qvalues1[n]), str(qvalues2[n]), str(qvalues3[n]),gene])
         if flag:
-            manhattonPlot(gene, pvalues,ouF)
-    S.sort(cmp = lambda x,y:cmp(float(x[3]),float(y[3])))
+                manhattonPlotSpecific(gene, pvalues,ouF)
+    S.sort(cmp = lambda x,y:cmp(float(x[6]),float(y[6])))
     for item in S:
         ouFile.write('\t'.join(item) + '\n')
-    ouFile.close()
 
     ###ALL.sort(cmp = lambda x,y:cmp(float(x[3]),float(y[3])))
     ###for item in ALL:
     ###    ouFile2.write('\t'.join(item) + '\n')
     ###ouFile2.close()
+    
+    ouFile.close()
 
-any_effect('Yeast-RNA-ProteinLight-AnyEffect-Sig-Cov')
-
+specific_effect('Yeast-RNA-ProteinLight-SpecificEffect-Sig-Cov')
 
