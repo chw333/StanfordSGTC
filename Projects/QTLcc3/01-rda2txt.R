@@ -1,6 +1,9 @@
+library('GenomicRanges')
+
 load('geno_mrk.rda')
 load('trait1.rda')
 load('trait2.rda')
+
 write.table(t(geno), file='Yeast-Genotype', col.names=NA, row.names=T, sep='\t', quote=F)
 write.table(t(rna), file='Yeast-RNA', col.names=NA, row.names=T, sep='\t', quote=F)
 write.table(t(protLight), file='Yeast-ProteinLight', col.names=NA, row.names=T, sep='\t', quote=F)

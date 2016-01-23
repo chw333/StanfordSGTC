@@ -92,7 +92,7 @@ def padj(x):
 
 def manhattonPlot(p_ID, pvalues, ouFprefix):
     pl.figure(figsize=[12,4])
-    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues[p_ID].values,chromBounds=chromBounds)
+    plot_manhattan(posCum=pos['pos_cum'],pv=pvalues[p_ID].values,chromBounds=chromBounds, thr_plotting=0.05)
     pl.title(p_ID)
     pl.savefig(ouFprefix + '.' + p_ID + '.pdf')
     pl.close('all')
