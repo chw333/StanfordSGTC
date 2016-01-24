@@ -52,7 +52,7 @@ def format(inF):
             #g = int(x)
             L.append(str(g))
             if g != 0 and g != 1:
-                print(g)
+                print('genotype encode:%s'%g)
         D[st] = L
     for st in Strains:
         ouFile.write(st + '\t' + '\t'.join(D[st]) + '\n')
