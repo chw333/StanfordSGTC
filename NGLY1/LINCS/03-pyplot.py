@@ -23,6 +23,8 @@ def plot(inF, color='red', title=None):
 
     L = LX[0:TOP]
     TF = TFX[0:TOP]
+    for x in TF:
+        print(x)
 
     if L:
         print(title)
@@ -40,12 +42,13 @@ def plot(inF, color='red', title=None):
         ax.set_title(title)
         pl.grid()
         pl.savefig(inF + '.pdf')
+    print('###')
 
 plot('result_UPTAG_summly_n7503_drug_anti-connection',color='green')
 plot('result_UPTAG_summly_n7503_drug_connection', color='red')
-plot('result_UPTAG_summly_n7503_geneKnockdown_anti-connection',color='green')
-plot('result_UPTAG_summly_n7503_geneKnockdown_connection',color='red')
-plot('result_UPTAG_summly_n7503_geneOverexpress_anti-connection',color='green')
-plot('result_UPTAG_summly_n7503_geneOverexpress_connection',color='red')
+#plot('result_UPTAG_summly_n7503_geneKnockdown_anti-connection',color='green')
+#plot('result_UPTAG_summly_n7503_geneKnockdown_connection',color='red')
+#plot('result_UPTAG_summly_n7503_geneOverexpress_anti-connection',color='green')
+#plot('result_UPTAG_summly_n7503_geneOverexpress_connection',color='red')
 
 
