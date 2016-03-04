@@ -1,3 +1,4 @@
+### just for check
 def connection():
     UP = []
     DN = []
@@ -22,10 +23,10 @@ def connection():
 
 
     inFile = open('Drug_cell_gene')
-    ouFile = open('Drug_cell_gene_connection', 'w')
+    ouFile = open('Drug_cell_gene_connection_check', 'w')
 
-    ouFile.write('Gene' +'\t'+ 'Gene' + '\t' + '\t'.join(UP) + '\t' + '\t'.join(DN) + '\n')
-    ouFile.write('UpDown' +'\t'+ 'UpDown' + '\t' + '\t'.join([str(x) for x in UPDN]) + '\n')
+    #ouFile.write('Drug' +'\t'+ 'Cell_Line' + '\t' + '\t'.join(UP) + '\t' + '\t'.join(DN) + '\n')
+    #ouFile.write('Drug' +'\t'+ 'Cell_Line' + '\t' + '\t'.join([str(x) for x in UPDN]) + '\n')
     for line in inFile:
         L = []
         line = line.strip()
@@ -36,18 +37,18 @@ def connection():
             if x in up:
                 L.append(1)
             elif x in dn: 
-                L.append(-1)
+                L.append(2)
             else:
                 L.append(0)
         for x in DN:
             if x in up:
-                L.append(-1)
+                L.append(2)
             elif x in dn: 
                 L.append(1)
             else:
                 L.append(0)
 
-        ouFile.write(fields[0] + '\t' + fields[1] + '\t' + '\t'.join([str(x) for x in L]) + '\n')
+        ouFile.write(''.join([str(x) for x in L]) + '\n')
 
     inFile.close()
     ouFile.close()
