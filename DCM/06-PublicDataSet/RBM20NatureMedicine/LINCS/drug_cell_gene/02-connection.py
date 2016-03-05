@@ -41,9 +41,9 @@ def connection():
                 L.append(0)
         for x in DN:
             if x in up:
-                L.append(-1)
-            elif x in dn: 
                 L.append(1)
+            elif x in dn: 
+                L.append(-1)
             else:
                 L.append(0)
 
