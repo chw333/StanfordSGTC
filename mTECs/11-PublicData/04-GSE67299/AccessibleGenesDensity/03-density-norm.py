@@ -1,3 +1,4 @@
+### sorted 
 ### legend thin line
 import matplotlib
 matplotlib.use('Agg')
@@ -40,7 +41,7 @@ fig = plt.figure()
 ax = fig.add_axes([0.15,0.15,0.8,0.8])
 
 #for i in range(4,df.shape[1]):
-for i in [7,4,5,6]:
+for i in [5,4,6,7]:
     AX.append(sns.kdeplot(np.log2(df.ix[:,i]), shade=False, color=LineColor(i-4), legend=True, label=GetLabel(i-4), bw=1))
 '''
 patch1 = mpatches.Patch(color='r', label='Tspan8 negative MHCII low')
