@@ -20,5 +20,5 @@ for F in Fs:
                     
                     ouFile.write('\t'.join(fields[0:5] + [cigar] + fields[6:9] + [seq, seqQ] + fields[11:]))
         ouFile.close()
-        p = subprocess.call(['samtools','view', '-b', ouF_Name, '-o', ouF_Name.split('_HQ60_RD.sam')[0]+'_NS.bam'])
+        p = subprocess.call(['samtools','view', '-b', ouF_Name, '-o', ouF_Name.split('_RD.sam')[0]+'_NF.bam'])
         os.remove(ouF_Name)
