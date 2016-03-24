@@ -14,5 +14,5 @@ transREF=/mnt/larsix/projects/NMD/hansun/Data/Ensembl/tophat2/transcriptome-inde
 
 fq1=CP2_1.fastq.gz
 fq2=CP2_2.fastq.gz
-out=CP2_test
+out=CP2
 tophat --b2-sensitive -p 8 -o $out --transcriptome-index $transREF $REF $fq1 $fq2
