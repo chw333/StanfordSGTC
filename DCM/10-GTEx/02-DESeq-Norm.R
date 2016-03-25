@@ -6,8 +6,8 @@ rownames(Counts) = geneCounts[1:nrow(geneCounts),1]
 sampleAnnot = read.table('GTEx_Analysis_v6_RNA-seq_RNA-SeQCv1.1.8_gene_reads_heart_sample_S635A_TwoCtrl', header=T, sep='\t')
 
 
-#Counts = Counts[1:nrow(Counts), (ncol(Counts)-2):ncol(Counts)]
-#sampleAnnot = sampleAnnot[(nrow(sampleAnnot)-2):nrow(sampleAnnot),]
+Counts = Counts[1:nrow(Counts), (ncol(Counts)-2):ncol(Counts)]
+sampleAnnot = sampleAnnot[(nrow(sampleAnnot)-2):nrow(sampleAnnot),]
 
 dds = DESeqDataSetFromMatrix(Counts, sampleAnnot, design=~Individual)
 dds = DESeq(dds)
