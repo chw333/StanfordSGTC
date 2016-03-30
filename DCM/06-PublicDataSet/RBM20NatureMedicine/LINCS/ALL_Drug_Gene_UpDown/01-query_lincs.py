@@ -15,7 +15,7 @@ PG = probe2gene()
 MAX = 1000000
 LIM = 1000
 def query():
-    ouFile = open('Drug_Gene_DpDown', 'w')
+    ouFile = open('Drug_Gene_DuDown', 'w')
     #f = urllib2.urlopen('http://api.lincscloud.org/a2/siginfo?q={"pert_id":"%s"}&user_key=lincsdemo'%drug)
     for n in range(0,MAX,LIM):
         f = urllib2.urlopen('http://api.lincscloud.org/a2/siginfo?q={"pert_iname":{"$regex":".*"}}&user_key=lincsdemo&l=%s&sk=%s'%(LIM,n))
