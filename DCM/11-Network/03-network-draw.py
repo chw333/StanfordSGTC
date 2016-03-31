@@ -34,7 +34,7 @@ def draw(inF):
     inFile.close()
     nx.draw_networkx(G,pos=nx.spring_layout(G), node_size=800, font_size=6, node_color=LC)
     limits=plt.axis('off')
-    plt.savefig('test.pdf')
+    plt.savefig(inF + '.pdf')
 
 
 draw('String-Biogrid-Network-RBM20-EGR1')

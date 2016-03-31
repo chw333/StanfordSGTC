@@ -1,4 +1,5 @@
-Sample = ['Act-B_rep1_NF.count','Act-B_rep2_NF.count','Pre-PB_rep1_NF.count','Pre-PB_rep2_NF.count','PB_rep1_NF.count']
+Sample = ['Tspan8_negative_MHCII_low_rep1_NF.count','Tspan8_negative_MHCII_low_rep2_NF.count','Tspan8_negative_MHCII_high_rep1_NF.count','Tspan8_negative_MHCII_high_rep2_NF.count','Tspan8_positive_MHCII_low_rep1_NF.count','Tspan8_positive_MHCII_low_rep2_NF.count','Tspan8_positive_MHCII_high_rep1_NF.count','Tspan8_positive_MHCII_high_rep2_NF.count']
+
 Sample2 = [x.split('_NF.count')[0] for x in Sample]
 
 D = {}
@@ -17,7 +18,7 @@ for sample in Sample:
             G.append(gene)
     inFile.close()
 
-ouFile = open('Mouse_Gene_Promoter_Cov', 'w')
+ouFile = open('mTECs_Gene_Promoter_Cov', 'w')
 ouFile.write('chr\tstart\tend\tgene' + '\t' + '\t'.join(Sample2) + '\n')
 
 for gene in G:
