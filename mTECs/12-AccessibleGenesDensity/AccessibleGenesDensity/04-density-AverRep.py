@@ -9,29 +9,23 @@ import matplotlib.patches as mpatches
 
 def LineColor(n):
     COLORS= ['r','b','g','m']
-    if n in [0,2,4,6]:
-        return(COLORS[n/2])
-    elif n in [1,3,5,7]:
-        return(COLORS[(n-1)/2])
+    return(COLORS[n])
 
 #### another method to remove some labels. Start with _
 def GetLabel(n,Sample2):
-    if n in [0,2,4,6]:
-        return(Sample2[n])
-    elif n in [1,3,5,7]:
-        return('_' + Sample2[n])
+    return(Sample2[n])
 
-LibSize = pd.read_table('mTECs-Sample-LibrarySize-NF', header=None)
+LibSize = pd.read_table('mTECs-Sample-LibrarySize-NF-AverRep', header=None)
 LibSizeFactor =  20000000
 
 
 def density(ouF, bandwidth):
     AX = []
-    df = pd.read_table('mTECs_Gene_Promoter_Cov_ProteinCoding', header=0)
+    df = pd.read_table('mTECs_Gene_Promoter_Cov_ProteinCoding-AverRep', header=0)
     
     Sample = df.columns[4:]
-    #Sample2 = Sample
-    Sample2 = [' '.join(x.split('_')[0:-1]) for x in df.columns[4:]]
+    Sample2 = Sample
+    #Sample2 = [' '.join(x.split('_')[0:-1]) for x in df.columns[4:]]
     
     fig = plt.figure()
     ax = fig.add_axes([0.15,0.15,0.8,0.8])
@@ -51,16 +45,16 @@ def density(ouF, bandwidth):
     
     plt.savefig(ouF +'-bw_'+ str(bandwidth) + '.pdf')
 
-density('mTECs-Promoter-Density', 0.1)
-density('mTECs-Promoter-Density', 0.3)
-density('mTECs-Promoter-Density', 0.5)
-density('mTECs-Promoter-Density', 1)
-density('mTECs-Promoter-Density', 2)
-density('mTECs-Promoter-Density', 3)
-density('mTECs-Promoter-Density', 4)
-density('mTECs-Promoter-Density', 5)
-density('mTECs-Promoter-Density', 6)
-density('mTECs-Promoter-Density', 7)
-density('mTECs-Promoter-Density', 8)
-density('mTECs-Promoter-Density', 9)
-density('mTECs-Promoter-Density', 10)
+density('mTECs-Promoter-Density-AverRep', 0.1)
+density('mTECs-Promoter-Density-AverRep', 0.3)
+density('mTECs-Promoter-Density-AverRep', 0.5)
+density('mTECs-Promoter-Density-AverRep', 1)
+density('mTECs-Promoter-Density-AverRep', 2)
+density('mTECs-Promoter-Density-AverRep', 3)
+density('mTECs-Promoter-Density-AverRep', 4)
+density('mTECs-Promoter-Density-AverRep', 5)
+density('mTECs-Promoter-Density-AverRep', 6)
+density('mTECs-Promoter-Density-AverRep', 7)
+density('mTECs-Promoter-Density-AverRep', 8)
+density('mTECs-Promoter-Density-AverRep', 9)
+density('mTECs-Promoter-Density-AverRep', 10)
