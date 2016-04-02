@@ -1,4 +1,4 @@
-Sample = ['Ren-1_NF.count', 'Ren-2_NF.count', 'Stag2-1_NF.count', 'Stag2-2_NF.count']
+Sample = ['Ren-1_NF2.count', 'Ren-2_NF2.count', 'Stag2-1_NF2.count', 'Stag2-2_NF2.count']
 Sample2 = [x.split('_NF.count')[0] for x in Sample]
 
 D = {}

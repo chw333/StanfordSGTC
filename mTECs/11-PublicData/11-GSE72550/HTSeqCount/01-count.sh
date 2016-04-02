@@ -1,0 +1,10 @@
+htseq-count -f bam -s no NrlKO_retina_rep1_NF.bam Mouse_Gene_Promoter.gtf > NrlKO_retina_rep1_NF.count
+htseq-count -f bam -s no WT_rods_rep2_NF.bam Mouse_Gene_Promoter.gtf > WT_rods_rep2_NF.count
+htseq-count -f bam -s no rd7_retina_rep2_NF.bam Mouse_Gene_Promoter.gtf > rd7_retina_rep2_NF.count
+htseq-count -f bam -s no WT_retina_rep1_NF.bam Mouse_Gene_Promoter.gtf > WT_retina_rep1_NF.count
+htseq-count -f bam -s no WT_cones_rep2_NF.bam Mouse_Gene_Promoter.gtf > WT_cones_rep2_NF.count
+htseq-count -f bam -s no WT_cones_rep1_NF.bam Mouse_Gene_Promoter.gtf > WT_cones_rep1_NF.count
+htseq-count -f bam -s no WT_retina_rep2_NF.bam Mouse_Gene_Promoter.gtf > WT_retina_rep2_NF.count
+htseq-count -f bam -s no rd7_retina_rep1_NF.bam Mouse_Gene_Promoter.gtf > rd7_retina_rep1_NF.count
+htseq-count -f bam -s no WT_rods_rep1_NF.bam Mouse_Gene_Promoter.gtf > WT_rods_rep1_NF.count
+htseq-count -f bam -s no NrlKO_retina_rep2_NF.bam Mouse_Gene_Promoter.gtf > NrlKO_retina_rep2_NF.count

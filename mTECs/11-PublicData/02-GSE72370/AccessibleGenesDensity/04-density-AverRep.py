@@ -17,7 +17,7 @@ def GetLabel(n,Sample2):
 
 def density(ouF, bandwidth):
     AX = []
-    df = pd.read_table('mTECs_Gene_Promoter_Cov_ProteinCoding-AverRep-Norm', header=0)
+    df = pd.read_table('Mouse_Gene_Promoter_Cov_ProteinCoding-AverRep-Norm', header=0)
     
     Sample = df.columns[4:]
     Sample2 = Sample
@@ -41,16 +41,16 @@ def density(ouF, bandwidth):
     
     plt.savefig(ouF +'-bw_'+ str(bandwidth) + '.pdf')
 
-density('mTECs-Promoter-Density-AverRep', 0.1)
-density('mTECs-Promoter-Density-AverRep', 0.3)
-density('mTECs-Promoter-Density-AverRep', 0.5)
-density('mTECs-Promoter-Density-AverRep', 1)
-density('mTECs-Promoter-Density-AverRep', 2)
-density('mTECs-Promoter-Density-AverRep', 3)
-density('mTECs-Promoter-Density-AverRep', 4)
-density('mTECs-Promoter-Density-AverRep', 5)
-density('mTECs-Promoter-Density-AverRep', 6)
-density('mTECs-Promoter-Density-AverRep', 7)
-density('mTECs-Promoter-Density-AverRep', 8)
-density('mTECs-Promoter-Density-AverRep', 9)
-density('mTECs-Promoter-Density-AverRep', 10)
+density('Mouse-Promoter-Density-AverRep', 0.1)
+density('Mouse-Promoter-Density-AverRep', 0.3)
+density('Mouse-Promoter-Density-AverRep', 0.5)
+density('Mouse-Promoter-Density-AverRep', 1)
+density('Mouse-Promoter-Density-AverRep', 2)
+density('Mouse-Promoter-Density-AverRep', 3)
+density('Mouse-Promoter-Density-AverRep', 4)
+density('Mouse-Promoter-Density-AverRep', 5)
+density('Mouse-Promoter-Density-AverRep', 6)
+density('Mouse-Promoter-Density-AverRep', 7)
+density('Mouse-Promoter-Density-AverRep', 8)
+density('Mouse-Promoter-Density-AverRep', 9)
+density('Mouse-Promoter-Density-AverRep', 10)

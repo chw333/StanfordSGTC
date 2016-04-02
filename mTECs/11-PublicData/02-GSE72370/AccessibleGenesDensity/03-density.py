@@ -21,13 +21,9 @@ def GetLabel(n,Sample2):
     elif n in [1,3,5,7]:
         return('_' + Sample2[n])
 
-LibSize = pd.read_table('mTECs-Sample-LibrarySize-NF', header=None)
-LibSizeFactor =  20000000
-
-
 def density(ouF, bandwidth):
     AX = []
-    df = pd.read_table('mTECs_Gene_Promoter_Cov_ProteinCoding', header=0)
+    df = pd.read_table('Mouse_Gene_Promoter_Cov_ProteinCoding-Norm', header=0)
     
     Sample = df.columns[4:]
     #Sample2 = Sample
@@ -37,7 +33,7 @@ def density(ouF, bandwidth):
     ax = fig.add_axes([0.15,0.15,0.8,0.8])
     
     for i in range(4,df.shape[1]):
-        AX.append(sns.kdeplot(np.log2(df.ix[:,i]/LibSize.ix[i-4,1]*LibSizeFactor), shade=False, color=LineColor(i-4), legend=True, label=GetLabel(i-4, Sample2), bw=bandwidth))
+        AX.append(sns.kdeplot(np.log2(df.ix[:,i]), shade=True, color=LineColor(i-4), legend=True, label=GetLabel(i-4, Sample2), bw=bandwidth))
     '''
     patch1 = mpatches.Patch(color='r', label='Tspan8 negative MHCII low')
     patch2 = mpatches.Patch(color='b', label='Tspan8 negative MHCII high')
@@ -51,16 +47,16 @@ def density(ouF, bandwidth):
     
     plt.savefig(ouF +'-bw_'+ str(bandwidth) + '.pdf')
 
-density('mTECs-Promoter-Density', 0.1)
-density('mTECs-Promoter-Density', 0.3)
-density('mTECs-Promoter-Density', 0.5)
-density('mTECs-Promoter-Density', 1)
-density('mTECs-Promoter-Density', 2)
-density('mTECs-Promoter-Density', 3)
-density('mTECs-Promoter-Density', 4)
-density('mTECs-Promoter-Density', 5)
-density('mTECs-Promoter-Density', 6)
-density('mTECs-Promoter-Density', 7)
-density('mTECs-Promoter-Density', 8)
-density('mTECs-Promoter-Density', 9)
-density('mTECs-Promoter-Density', 10)
+density('Mouse-Promoter-Density', 0.1)
+density('Mouse-Promoter-Density', 0.3)
+density('Mouse-Promoter-Density', 0.5)
+density('Mouse-Promoter-Density', 1)
+density('Mouse-Promoter-Density', 2)
+density('Mouse-Promoter-Density', 3)
+density('Mouse-Promoter-Density', 4)
+density('Mouse-Promoter-Density', 5)
+density('Mouse-Promoter-Density', 6)
+density('Mouse-Promoter-Density', 7)
+density('Mouse-Promoter-Density', 8)
+density('Mouse-Promoter-Density', 9)
+density('Mouse-Promoter-Density', 10)
