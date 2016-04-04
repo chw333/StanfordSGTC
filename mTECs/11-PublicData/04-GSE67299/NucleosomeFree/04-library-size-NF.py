@@ -1,7 +1,7 @@
 import subprocess
 CH = [str(x) for x in range(1, 20)] + ['X','Y']
 
-Sample =['Ren-1_NF.bam','Ren-2_NF.bam','Stag2-1_NF.bam','Stag2-2_NF.bam']
+Sample = ['SRR1930167_NF.bam','SRR1930169_NF.bam','SRR1930171_NF.bam','SRR1930173_NF.bam']
 
 ouFile = open('Mouse-Sample-LibrarySize-NF', 'w')
 for F in Sample:
@@ -21,7 +21,3 @@ ouFile.close()
     
     
 
-SRR1930167_NF.bam
-SRR1930169_NF.bam
-SRR1930171_NF.bam
-SRR1930173_NF.bam

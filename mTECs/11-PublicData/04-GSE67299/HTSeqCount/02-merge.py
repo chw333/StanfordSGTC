@@ -1,4 +1,4 @@
-Sample = ['SRR1930167_NF2.count', 'SRR1930169_NF2.count', 'SRR1930171_NF2.count', 'SRR1930173_NF2.count']
+Sample = ['SRR1930167_NF.count', 'SRR1930169_NF.count', 'SRR1930171_NF.count', 'SRR1930173_NF.count']
 Sample2 = ['EmbryonicFibroblastst','NeuralStem','InducedPluripotentStem','EmbryonicStem']
 
 D = {}
