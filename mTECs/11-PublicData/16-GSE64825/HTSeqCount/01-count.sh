@@ -1,0 +1,10 @@
+htseq-count -f bam -s no Chd4_rep1_NF.bam Mouse_Gene_Promoter.gtf > Chd4_rep1_NF.count
+htseq-count -f bam -s no Brg1_rep2_NF.bam Mouse_Gene_Promoter.gtf > Brg1_rep2_NF.count
+htseq-count -f bam -s no Ctrl_rep2_NF.bam Mouse_Gene_Promoter.gtf > Ctrl_rep2_NF.count
+htseq-count -f bam -s no Ep400_rep1_NF.bam Mouse_Gene_Promoter.gtf > Ep400_rep1_NF.count
+htseq-count -f bam -s no Ctrl_rep4_NF.bam Mouse_Gene_Promoter.gtf > Ctrl_rep4_NF.count
+htseq-count -f bam -s no Ep400_rep2_NF.bam Mouse_Gene_Promoter.gtf > Ep400_rep2_NF.count
+htseq-count -f bam -s no Ctrl_rep1_NF.bam Mouse_Gene_Promoter.gtf > Ctrl_rep1_NF.count
+htseq-count -f bam -s no Brg1_rep1_NF.bam Mouse_Gene_Promoter.gtf > Brg1_rep1_NF.count
+htseq-count -f bam -s no Chd4_rep2_NF.bam Mouse_Gene_Promoter.gtf > Chd4_rep2_NF.count
+htseq-count -f bam -s no Ctrl_rep3_NF.bam Mouse_Gene_Promoter.gtf > Ctrl_rep3_NF.count

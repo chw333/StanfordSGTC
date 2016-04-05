@@ -1,7 +1,9 @@
 import subprocess
 CH = [str(x) for x in range(1, 20)] + ['X','Y']
-Sample = ['Excitatory_Neurons_rep1_NF.bam','Excitatory_Neurons_rep2_NF.bam','PV_Neurons_rep1_NF.bam','PV_Neurons_rep2_NF.bam','VIP_Neurons_rep1_NF.bam','VIP_Neurons_rep2_NF.bam']
-ouFile = open('mTECs-Sample-LibrarySize', 'w')
+
+
+Sample = ['KO_HFSC_NF.bam','WT_HFSC_NF.bam']
+ouFile = open('Mouse-Sample-LibrarySize-NF', 'w')
 for F in Sample:
     p = subprocess.Popen(['samtools','idxstats',F], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     total_num = 0
@@ -13,7 +15,8 @@ for F in Sample:
         rt = total_num/20000000.0
         if ch in CH:
             total_num += ch_num
-    ouFile.write(F.split('_NF.bam')[0] + '\t' + str(total_num) + '\t' + '%.4f'%rt + '\n')
+    #ouFile.write(F.split('_NF.bam')[0] + '\t' + str(total_num) + '\t' + '%.4f'%rt + '\n')
+    ouFile.write(F.split('_NF.bam')[0] + '\t' + str(total_num) + '\n')
 ouFile.close()
     
     

@@ -1,4 +1,5 @@
-Sample = ['NrlKO_retina_rep1_NF.count','NrlKO_retina_rep2_NF.count','rd7_retina_rep1_NF.count','rd7_retina_rep2_NF.count','WT_retina_rep1_NF.count','WT_retina_rep2_NF.count','WT_cones_rep1_NF.count','WT_cones_rep2_NF.count','WT_rods_rep1_NF.count','WT_rods_rep2_NF.count']
+#Sample = ['Brg1_rep1_NF.count','Brg1_rep2_NF.count','Chd4_rep1_NF.count','Chd4_rep2_NF.count','Ep400_rep1_NF.count','Ep400_rep2_NF.count','Ctrl_rep1_NF.count','Ctrl_rep2_NF.count','Ctrl_rep3_NF.count','Ctrl_rep4_NF.count']
+Sample = ['Brg1_rep1_NF.count','Brg1_rep2_NF.count','Chd4_rep1_NF.count','Chd4_rep2_NF.count','Ep400_rep1_NF.count','Ep400_rep2_NF.count','Ctrl_rep1_NF.count','Ctrl_rep2_NF.count']
 Sample2 = [x.split('_NF.count')[0] for x in Sample]
 
 D = {}

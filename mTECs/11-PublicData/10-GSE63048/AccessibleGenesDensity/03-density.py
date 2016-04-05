@@ -20,8 +20,8 @@ def density(ouF, bandwidth):
     df = pd.read_table('Mouse_Gene_Promoter_Cov_ProteinCoding-Norm', header=0)
     
     Sample = df.columns[4:]
-    Sample2 = Sample
-    #Sample2 = [' '.join(x.split('_')[0:-1]) for x in df.columns[4:]]
+    #Sample2 = Sample
+    Sample2 = [' '.join(x.split('_')[0:-1]) for x in df.columns[4:]]
     
     fig = plt.figure()
     ax = fig.add_axes([0.15,0.15,0.8,0.8])
